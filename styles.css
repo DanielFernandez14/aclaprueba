@@ -308,27 +308,29 @@ body::after {
     
     /* Mostrar navegación cuando se activa */
     .nav-links.active {
-      display: flex;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        display: flex;
     }
     
     /* Centrar cada item en el menú móvil */
     .nav-links li {
-      width: 100%;
-      text-align: center;
-      margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0;
     }
     
     /* Ajuste para dropdown en móvil */
     .dropdown-menu {
-      position: static;
-      box-shadow: none;
-      padding-left: 1rem;
+    position: static;
+    box-shadow: none;
+    padding-left: 1rem;
     }
-  }
-  
+}
+
   /* Vista para pantallas muy pequeñas (hasta 480px) */
     @media (max-width: 480px) {
     .navbar {
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         padding: var(--navbar-padding) 1rem;
     }
     
