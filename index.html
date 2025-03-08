@@ -6,36 +6,35 @@
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="nubes.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script defer src="app.js"></script>   
 </head>
 <body>
     <header>
         <nav class="navbar">
-          <div class="logo-container">
-            <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
-            <div class="typewriter-container">
-              <span id="typewriter"></span>
-              <span class="caret"></span>
+            <div class="logo-container">
+                <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
+                <div class="typewriter-container">
+                    <span id="typewriter"></span>
+                    <span class="caret"></span>
+                </div>
             </div>
-          </div>
-          <ul class="nav-links">
-            <li id="home"><a href="#home"><i class='bx bx-home bx-flashing'></i>Home</a></li>
-            <li><a href="#nosotros"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
-            <li class="dropdown">
-              <a href="#escuela"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
-            </li>
-            <li class="dropdown">
-              <a href="#novedades"><i class='bx bx-news bx-flashing'></i>Novedades</a>
-            </li>
-            <li><a href="#contacto"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
-          </ul>
-          <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+            <ul class="nav-links">
+                <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
+                <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
+                </li>
+                <li class="dropdown">
+                    <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
+                </li>
+                <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
-      </header>
+    </header>
 
 
     <br><br><br><br><br>
@@ -66,9 +65,11 @@
             <div class="cloud cloud-8"></div>
             <div class="cloud cloud-9"></div>
         </div>
-    
+
         <!-- Sección de artículos -->
         <section class="articulos">
+            <h1>Bienvenido a ACLA</h1>
+            <p>Página principal. Aquí puedes colocar el contenido de tu Home.</p>
             <h2>Últimos Artículos de Aviación</h2>
             <div class="card-container">
                 <article class="card">
@@ -93,26 +94,26 @@
         </section>
     
         <!-- Sección de vuelos -->
-<section class="nuestros-vuelos">
-    <h2>Nuestros Vuelos</h2>
-    <div class="vuelos-container">
-        <div class="vuelo">
-            <h3>Vuelo de Instrucción</h3>
-            <img src="./img/insta/aerolineas.png" alt="Vuelo de Instrucción" class="vuelo-imagen">
-            <p>Experiencia para nuevos alumnos con nuestros instructores expertos.</p>
-        </div>
-        <div class="vuelo">
-            <h3>Vuelo Panorámico</h3>
-            <img src="./img/insta/cssna.png" alt="Vuelo Panorámico" class="vuelo-imagen">
-            <p>Disfruta de vistas espectaculares desde el aire.</p>
-        </div>
-        <div class="vuelo">
-            <h3>Simuladores de Vuelo</h3>
-            <img src="./img/simulador.jpg" alt="Simuladores de Vuelo" class="vuelo-imagen">
-            <p>Prueba la experiencia de volar sin despegar del suelo.</p>
-        </div>
-    </div>
-</section>
+        <section class="nuestros-vuelos">
+            <h2>Nuestros Vuelos</h2>
+            <div class="vuelos-container">
+                <div class="vuelo">
+                    <h3>Vuelo de Instrucción</h3>
+                    <img src="./img/insta/aerolineas.png" alt="Vuelo de Instrucción" class="vuelo-imagen">
+                    <p>Experiencia para nuevos alumnos con nuestros instructores expertos.</p>
+                </div>
+                <div class="vuelo">
+                    <h3>Vuelo Panorámico</h3>
+                    <img src="./img/insta/cssna.png" alt="Vuelo Panorámico" class="vuelo-imagen">
+                    <p>Disfruta de vistas espectaculares desde el aire.</p>
+                </div>
+                <div class="vuelo">
+                    <h3>Simuladores de Vuelo</h3>
+                    <img src="./img/simulador.jpg" alt="Simuladores de Vuelo" class="vuelo-imagen">
+                    <p>Prueba la experiencia de volar sin despegar del suelo.</p>
+                </div>
+            </div>
+        </section>
 
     
         <!-- Sección de flota aérea -->
@@ -194,8 +195,6 @@
         </section>
     </main>
     
-
-
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -226,6 +225,6 @@
         </div>
     </footer>
     
+    <script defer src="app.js"></script>
 </body>
-    
 </html>
