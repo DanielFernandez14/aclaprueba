@@ -1,18 +1,24 @@
-/* Estilo de las nubes */
+:root {
+    --cloud-color: #ffffff;
+    --cloud-shadow: rgba(0, 0, 0, 0.1);
+    --cloud-gradient: linear-gradient(135deg, #ffffff, #f0f0f0);
+    --cloud-opacity: 0.8;
+}
 .cloud {
     position: absolute;
-    background: #ffffff; /* Nubes blancas */
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: floatClouds 60s linear infinite;
+    background: var(--cloud-gradient); /* Gradiente para un efecto de luz */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma orgánica */
+    opacity: var(--cloud-opacity);
+    box-shadow: 0 10px 20px var(--cloud-shadow); /* Sombra para profundidad */
+    animation: floatClouds linear infinite; /* Animación infinita */
 }
-
-/* Diferentes tamaños y posiciones para las nubes */
 .cloud-1 {
     width: 300px;
     height: 150px;
     top: 20%;
     left: -20%;
+    animation-duration: 60s;
+    animation-direction: normal;
 }
 
 .cloud-2 {
@@ -20,6 +26,8 @@
     height: 130px;
     top: 40%;
     left: 50%;
+    animation-duration: 70s;
+    animation-direction: reverse;
 }
 
 .cloud-3 {
@@ -27,6 +35,10 @@
     height: 120px;
     top: 10%;
     right: -10%;
+    animation-duration: 80s;
+    animation-direction: normal;
+    opacity: 0.6; /* Más lejana */
+    filter: blur(2px); /* Desenfoque para profundidad */
 }
 
 .cloud-4 {
@@ -34,6 +46,8 @@
     height: 100px;
     top: 30%;
     left: -10%;
+    animation-duration: 65s;
+    animation-direction: reverse;
 }
 
 .cloud-5 {
@@ -41,6 +55,8 @@
     height: 130px;
     top: 50%;
     right: 5%;
+    animation-duration: 75s;
+    animation-direction: normal;
 }
 
 .cloud-6 {
@@ -48,6 +64,10 @@
     height: 150px;
     top: 70%;
     left: 30%;
+    animation-duration: 85s;
+    animation-direction: reverse;
+    opacity: 0.7;
+    filter: blur(1px);
 }
 
 .cloud-7 {
@@ -55,6 +75,8 @@
     height: 170px;
     top: 60%;
     left: 60%;
+    animation-duration: 90s;
+    animation-direction: normal;
 }
 
 .cloud-8 {
@@ -62,6 +84,8 @@
     height: 120px;
     top: 20%;
     right: -30%;
+    animation-duration: 95s;
+    animation-direction: reverse;
 }
 
 .cloud-9 {
@@ -69,77 +93,43 @@
     height: 150px;
     top: 40%;
     right: 10%;
+    animation-duration: 100s;
+    animation-direction: normal;
+    opacity: 0.5;
+    filter: blur(3px); /* Muy lejana */
 }
-
-/* Animación de movimiento de las nubes */
 @keyframes floatClouds {
     0% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(100%);
+        transform: translateX(-100vw); /* Comienzan fuera de la pantalla a la izquierda */
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(100vw); /* Terminan fuera a la derecha */
+    }
+}
+@media screen and (max-width: 768px) {
+    .cloud {
+        transform: scale(0.7); /* Reducimos el tamaño un 30% */
+    }
+    .cloud-1, .cloud-2, .cloud-3, .cloud-4, .cloud-5, .cloud-6, .cloud-7, .cloud-8, .cloud-9 {
+        top: calc(20% + 10px); /* Ajuste vertical */
     }
 }
 
-/* Nubes flotantes para crear un efecto de movimiento */
+@media screen and (max-width: 480px) {
+    .cloud {
+        transform: scale(0.5); /* Reducimos el tamaño un 50% */
+    }
+    .cloud-1, .cloud-2, .cloud-3, .cloud-4, .cloud-5, .cloud-6, .cloud-7, .cloud-8, .cloud-9 {
+        top: calc(10% + 5px); /* Ajuste para pantallas muy pequeñas */
+    }
+}
 .clouds-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 100px); /* Altura ajustada para que las nubes no atraviesen el footer */
-    pointer-events: none; /* Para que no interfiera con los clics */
-    overflow: hidden; /* Evita que las nubes causen desplazamiento */
-    z-index: -1; /* Asegura que las nubes estén por detrás del contenido */
-}
-
-/* Responsividad */
-@media screen and (max-width: 768px) {
-    .cloud-1 {
-        width: 200px;
-        height: 100px;
-    }
-
-    .cloud-2 {
-        width: 180px;
-        height: 100px;
-    }
-
-    .cloud-3 {
-        width: 150px;
-        height: 90px;
-    }
-
-    .cloud-4 {
-        width: 130px;
-        height: 80px;
-    }
-
-    .cloud-5 {
-        width: 180px;
-        height: 110px;
-    }
-
-    .cloud-6 {
-        width: 220px;
-        height: 120px;
-    }
-
-    .cloud-7 {
-        width: 250px;
-        height: 140px;
-    }
-
-    .cloud-8 {
-        width: 200px;
-        height: 100px;
-    }
-
-    .cloud-9 {
-        width: 220px;
-        height: 120px;
-    }
+    height: calc(100vh - 100px); /* Evita que las nubes cubran el footer */
+    pointer-events: none; /* No interfiere con clics */
+    overflow: hidden; /* Evita desplazamiento no deseado */
+    z-index: -1; /* Detrás del contenido */
 }

@@ -15,36 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
         });
     });
-
-    // Efecto typewriter
-    const text = "A.C.L.A";
-    const textContainer = document.getElementById('typewriter-text');
-    let index = 0;
-    let forward = true;
-
-    function typeWriter() {
-        if (forward) {
-            if (index < text.length) {
-                textContainer.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 150);
-            } else {
-                setTimeout(() => {
-                    forward = false;
-                    typeWriter();
-                }, 2000);
-            }
-        } else {
-            if (index > 0) {
-                textContainer.textContent = text.substring(0, index - 1);
-                index--;
-                setTimeout(typeWriter, 100);
-            } else {
-                forward = true;
-                setTimeout(typeWriter, 500);
-            }
-        }
-    }
-    
-    typeWriter();
 });
