@@ -321,31 +321,11 @@ header {
     top: 0;
     z-index: 1000;
 }
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    .navbar {
-        max-width: 100%;
-        padding: 0.5rem 1rem;
-    }
-    .nav-links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: rgba(255, 255, 255, 0.95);
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-    /* Resto del código sigue igual */
-}
+
 .navbar {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -370,14 +350,14 @@ header {
 
 .nav-links li {
     position: relative;
-    margin: 0 1rem;
+    margin: 0 0.5rem; /* Reducido para achicar contenedores */
 }
 
 .nav-links a {
     color: var(--negro);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem; /* Reducido para achicar contenedores */
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
@@ -458,6 +438,21 @@ header {
         display: flex;
     }
 
+    .navbar {
+        padding: 0.5rem 1rem; /* Ajustado para móviles */
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        max-width: 70%; /* Limita el ancho del logo y typewriter */
+    }
+
+    .typewriter {
+        font-size: 1rem; /* Reduce tamaño del texto en móviles */
+        overflow: hidden; /* Evita desbordamiento */
+    }
+
     .nav-links {
         display: none;
         width: 100%;
@@ -509,8 +504,11 @@ header {
         max-height: 70px;
     }
     .nav-links a {
-        padding: 0.5rem;
+        padding: 0.3rem 0.8rem; /* Mantenido para consistencia */
         font-size: 0.9rem;
+    }
+    .typewriter {
+        font-size: 0.9rem; /* Más pequeño en pantallas muy pequeñas */
     }
 }
 

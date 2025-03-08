@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Menú hamburguesa
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
@@ -14,9 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Efecto typewriter
     const text = "A.C.L.A";
     const textContainer = document.getElementById('typewriter-text');
     let index = 0;
@@ -24,27 +24,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function typeWriter() {
         if (forward) {
-        if (index < text.length) {
-        textContainer.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 150);
+            if (index < text.length) {
+                textContainer.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 150);
+            } else {
+                setTimeout(() => {
+                    forward = false;
+                    typeWriter();
+                }, 2000);
+            }
         } else {
-          // Una vez completado, espera y borra el texto para repetir
-        setTimeout(() => {
-            forward = false;
-            typeWriter();
-        }, 2000);
+            if (index > 0) {
+                textContainer.textContent = text.substring(0, index - 1);
+                index--;
+                setTimeout(typeWriter, 100);
+            } else {
+                forward = true;
+                setTimeout(typeWriter, 500);
+            }
         }
-    } else {
-        if (index > 0) {
-        textContainer.textContent = text.substring(0, index - 1);
-        index--;
-        setTimeout(typeWriter, 100);
-        } else {
-        forward = true;
-        setTimeout(typeWriter, 500);
-        }
-    }
     }
     
     typeWriter();
