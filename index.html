@@ -1,0 +1,231 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACLA</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="nubes.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="app.js"></script>   
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
+                <div class="typewriter">
+                <span id="typewriter-text"></span>
+                <span class="caret"></span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li id="home"><a href="#home"><i class='bx bx-home bx-flashing'></i>Home</a></li>
+                <li><a href="#nosotros"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#escuela"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#cursos">Cursos</a></li>
+                        <li><a href="#inscripciones">Inscripciones</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#novedades"><i class='bx bx-news bx-flashing'></i> Novedades</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#noticias">Noticias</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>    
+    </header>
+    <br><br><br><br><br>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.40 (1).jpeg" alt="Imagen 1"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.40 (2).jpeg" alt="Imagen 2"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.40.jpeg" alt="Imagen 3"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.41 (1).jpeg" alt="Imagen 4"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.41 (2).jpeg" alt="Imagen 5"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.41.jpeg" alt="Imagen 6"></div>
+            <div class="carousel-item"><img src="./img/imgmati/WhatsApp Image 2025-03-07 at 22.00.42.jpeg" alt="Imagen 7"></div>
+        </div>
+    </div>
+    <main>
+        <!-- Contenedor de nubes -->
+        <div class="clouds-container">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            <div class="cloud cloud-6"></div>
+            <div class="cloud cloud-7"></div>
+            <div class="cloud cloud-8"></div>
+            <div class="cloud cloud-9"></div>
+        </div>
+    
+        <!-- Sección de artículos -->
+        <section class="articulos">
+            <h2>Últimos Artículos de Aviación</h2>
+            <div class="card-container">
+                <article class="card">
+                    <img src="./img/primerawoman.jpg" alt="Aviación">
+                    <h3>Historia de la Aviación</h3>
+                    <p>Explora los hitos más importantes en la historia de la aviación.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </article>
+                <article class="card">
+                    <img src="./img/Primera Camada.jpg" alt="Pilotos">
+                    <h3>Cómo convertirse en piloto</h3>
+                    <p>Descubre los pasos para obtener tu licencia de piloto.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </article>
+                <article class="card">
+                    <img src="./img/reha.jpg" alt="Tecnología">
+                    <h3>Innovaciones en la aviación</h3>
+                    <p>Las nuevas tecnologías que están revolucionando la industria.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </article>
+            </div>
+        </section>
+    
+        <!-- Sección de vuelos -->
+        <section class="nuestros-vuelos">
+            <h2>Nuestros Vuelos</h2>
+            <div class="vuelos-container">
+                <div class="vuelo">
+                    <h3>Vuelo de Instrucción</h3>
+                    <p>Experiencia para nuevos alumnos con nuestros instructores expertos.</p>
+                </div>
+                <div class="vuelo">
+                    <h3>Vuelo Panorámico</h3>
+                    <p>Disfruta de vistas espectaculares desde el aire.</p>
+                </div>
+                <div class="vuelo">
+                    <h3>Simuladores de Vuelo</h3>
+                    <p>Prueba la experiencia de volar sin despegar del suelo.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Sección de flota aérea -->
+        <section class="flota-aerea">
+            <h2>Nuestra Flota</h2>
+            <p>Disponemos de una moderna flota de aeronaves para entrenamientos y vuelos recreativos.</p>
+            <div class="flota-gallery">
+                <div class="flota-item">
+                    <img src="./img/insta/aero.png" alt="Cessna 172">
+                    <p>Cessna 172 - Ideal para vuelo recreativo</p>
+                </div>
+                <div class="flota-item">
+                    <img src="./img/insta/nievle.png" alt="Piper Cherokee">
+                    <p>Piper Cherokee - Vuelos instructivos</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Sección de seguridad aérea -->
+        <section class="seguridad-aerea">
+            <h2>Seguridad Aérea</h2>
+            <p>La seguridad es nuestra prioridad. Contamos con los protocolos más avanzados para garantizar vuelos seguros y eficientes.</p>
+        </section>
+    
+        <!-- Nueva sección: Cursos y formación (inspirado en aeroclubcordoba.com.ar) -->
+        <section class="cursos-formacion">
+            <h2>Cursos y Formación</h2>
+            <div class="cursos-container">
+                <div class="curso">
+                    <h3>Piloto Privado</h3>
+                    <p>Primer paso para volar por tu cuenta. Incluye 40 horas de vuelo.</p>
+                    <a href="#" class="btn">Más info</a>
+                </div>
+                <div class="curso">
+                    <h3>Piloto Comercial</h3>
+                    <p>Prepárate para una carrera profesional con 200 horas de vuelo.</p>
+                    <a href="#" class="btn">Más info</a>
+                </div>
+                <div class="curso">
+                    <h3>Instructor de Vuelo</h3>
+                    <p>Conviértete en instructor y enseña a futuros pilotos.</p>
+                    <a href="#" class="btn">Más info</a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Nueva sección: Eventos y actividades -->
+        <section class="eventos">
+            <h2>Eventos y Actividades</h2>
+            <div class="eventos-container">
+                <div class="evento">
+                    <img src="./img/evento1.jpg" alt="Festival Aéreo">
+                    <h3>Festival Aéreo 2025</h3>
+                    <p>Únete a nuestro evento anual con exhibiciones y vuelos demostrativos.</p>
+                    <span>Fecha: 15 de Mayo, 2025</span>
+                </div>
+                <div class="evento">
+                    <img src="./img/evento2.jpg" alt="Jornada de Puertas Abiertas">
+                    <h3>Jornada de Puertas Abiertas</h3>
+                    <p>Conoce nuestras instalaciones y prueba un simulador.</p>
+                    <span>Fecha: 20 de Junio, 2025</span>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Nueva sección: Testimonios -->
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros alumnos</h2>
+            <div class="testimonios-container">
+                <div class="testimonio">
+                    <p>"Una experiencia increíble, los instructores son muy profesionales."</p>
+                    <span>- Fede, Piloto Privado</span>
+                </div>
+                <div class="testimonio">
+                    <p>"El mejor lugar para aprender a volar, 100% recomendado."</p>
+                    <span>- Ema, Alumno</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Acerca de Nosotros</h3>
+                <p>Somos un aeroclub dedicado a la aviación recreativa, con el objetivo de promover la aviación general y ofrecer formación de alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="mailto:contacto@aeroclub.com">contacto@aeroclub.com</a></li>
+                    <li><a href="tel:+123456789">2966-282828</a></li>
+                    <li>Aeropuerto El Calafate</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ACLA - Todos los derechos reservados</p>
+            <p>Desarrollado por <a href="#">Daniel Matías Fernández</a></p>
+        </div>
+    </footer>
+    
+</body>
+    
+</html>

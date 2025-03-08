@@ -1,0 +1,1946 @@
+/* Variables raíz */
+:root {
+    --negro: #000000;
+    --blanco: #FFFFFF;
+    --dorado: #FFD700;
+    --gris: #808080;
+    --celeste: #75AADB;
+    --blanco-bandera: #FFFFFF;
+    --sol-dorado: #FFD700;
+}
+
+/* Reset básico y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #062a49;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    color: #333;
+}
+
+
+
+/* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
+/* Animación de nubes moviéndose detrás */
+/* Fondo con nubes moviéndose */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x;
+    opacity: 0.4;
+    animation: moveClouds 60s linear infinite;
+    z-index: -1;
+}
+
+/* Capa de nubes con movimiento más suave y sutil */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x;
+    opacity: 0.6;
+    animation: moveCloudsSlow 120s linear infinite;
+    z-index: -2;
+}
+
+/* Animación de nubes rápidas */
+@keyframes moveClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Animación de nubes lentas */
+@keyframes moveCloudsSlow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-30%); }
+}
+
+/* Variables globales para tipografía */
+:root {
+  --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
+  --logo-text-size: 1.5rem;
+  --logo-text-color: #333;
+  --marquee-duration: 15s; /* Duración de la animación */
+}
+
+/* Contenedor principal del logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilos para la imagen del logo */
+.logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Contenedor para el texto en movimiento */
+.logo-text-container {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+/* Estilo del texto que se repite en bucle */
+.logo-text {
+  display: inline-block;
+  font-family: var(--primary-font);
+  font-size: var(--logo-text-size);
+  color: var(--logo-text-color);
+  white-space: nowrap;
+  animation: marquee var(--marquee-duration) linear infinite;
+}
+
+/* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+/* Variables globales */
+:root {
+    --hover-scale: 1.1;
+    --transition-duration: 0.3s;
+    --font-family-typewriter: 'Courier New', Courier, monospace;
+    --text-color: #333;
+    --font-size: 1.5rem;
+  }
+  
+  /* Contenedor que agrupa el logo y el texto typewriter */
+  .logo-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease;
+  }
+  
+  /* Hover para agrandar logo y texto */
+  .logo-container:hover {
+    transform: scale(var(--hover-scale));
+  }
+  
+  /* Estilo de la imagen del logo */
+  .logo-image {
+    max-height: 80px;
+    width: auto;
+  }
+  
+  /* Contenedor del efecto typewriter */
+  .typewriter {
+    font-family: var(--font-family-typewriter);
+    font-size: var(--font-size);
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--text-color);
+  }
+  
+  /* Efecto de parpadeo en el cursor */
+  .caret {
+    display: inline-block;
+    width: 2px;
+    background-color: var(--text-color);
+    margin-left: 2px;
+    animation: blink 0.8s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+
+
+
+/* Variables globales para fácil mantenimiento */
+:root {
+    --carousel-bg: #f5f5f5;
+    --border-radius: 10px;
+    --transition-duration: 0.5s;
+}
+  
+/* Contenedor principal del carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 100%;
+    height: 600px; /* Altura para imágenes verticales */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius);
+    /* background-color: var(--carousel-bg); */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+  
+/* Carrusel (contenedor interno de las imágenes) */
+.carousel {
+    display: flex;
+    /* Animación para desplazamiento de ida y vuelta */
+    animation: scrollCarousel 20s linear infinite;
+}
+  
+/* Cada item del carrusel */
+.carousel-item {
+    flex: 0 0 calc(100% / 3); /* Se muestran 3 imágenes por pantalla en vista de escritorio */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem; /* Pequeño espacio entre imágenes */
+}
+  
+/* Estilo de las imágenes */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* Ajusta la imagen para cubrir el contenedor */
+    object-position: center;     /* Centrado de la imagen */
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
+}
+  
+/* Efecto al pasar el ratón */
+.carousel-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+  
+/* Animación base para 3 imágenes visibles con movimiento de ida y vuelta */
+@keyframes scrollCarousel {
+    0% {
+      transform: perspective(1000px) translateX(0) rotateY(10deg);
+    }
+    50% {
+      transform: perspective(1000px) translateX(-33.33%) rotateY(10deg);
+    }
+    100% {
+      transform: perspective(1000px) translateX(0) rotateY(10deg);
+    }
+}
+  
+/* Responsividad */
+  
+/* Pantallas medianas: ajuste de altura */
+@media (max-width: 1024px) {
+    .carousel-container {
+      height: 500px;
+    }
+}
+  
+/* Pantallas pequeñas: se muestran 2 imágenes a la vez */
+@media (max-width: 768px) {
+    .carousel-container {
+      height: 400px;
+    }
+    .carousel-item {
+      flex: 0 0 calc(100% / 2);
+    }
+    /* Redefinición de la animación para 2 imágenes visibles con movimiento de ida y vuelta */
+    .carousel {
+      animation: scrollCarousel2 20s linear infinite;
+    }
+    @keyframes scrollCarousel2 {
+      0% {
+        transform: perspective(1000px) translateX(0) rotateY(10deg);
+      }
+      50% {
+        transform: perspective(1000px) translateX(-50%) rotateY(10deg);
+      }
+      100% {
+        transform: perspective(1000px) translateX(0) rotateY(10deg);
+      }
+    }
+}
+  
+/* Pantallas extra pequeñas: se muestra 1 imagen a la vez */
+@media (max-width: 480px) {
+    .carousel-container {
+      height: 300px;
+    }
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+    /* Animación para 1 imagen visible con movimiento de ida y vuelta */
+    .carousel {
+      animation: scrollCarousel3 20s linear infinite;
+    }
+    @keyframes scrollCarousel3 {
+      0% {
+        transform: perspective(1000px) translateX(0) rotateY(10deg);
+      }
+      50% {
+        transform: perspective(1000px) translateX(-100%) rotateY(10deg);
+      }
+      100% {
+        transform: perspective(1000px) translateX(0) rotateY(10deg);
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos del header y navbar */
+header {
+    background: linear-gradient(90deg, rgba(117, 170, 219, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    max-height: 90px;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.logo img:hover {
+    transform: scale(1.3);
+}
+
+/* Menú principal */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--dorado);
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+}
+
+.nav-links i {
+    margin-right: 0.5rem;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    animation: slideDown 0.3s ease;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background: var(--celeste);
+    color: var(--blanco);
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: var(--negro);
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Animación menú hamburguesa */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 2rem;
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para la sección de artículos */
+.articulos {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título corregido */
+.articulos h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 auto 3rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.articulos h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+}
+
+/* Contenedor de tarjetas */
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background: var(--blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la tarjeta */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Contenido de la tarjeta */
+.card h3 {
+    color: var(--negro);
+    font-size: 1.5rem;
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--gris);
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+}
+
+/* Botón */
+.card .btn {
+    display: block;
+    margin: 0 1rem 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--dorado);
+    color: var(--negro);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.card .btn:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.card .btn:hover {
+    background: var(--celeste);
+    color: var(--blanco);
+}
+
+/* Detalle decorativo (nubes pequeñas de fondo) */
+.articulos::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 150px;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 15s infinite linear;
+    z-index: 0;
+}
+
+.articulos::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    width: 120px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 20s infinite linear reverse;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .articulos h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .articulos {
+        padding: 3rem 1rem;
+    }
+
+    .articulos h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .articulos h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Estilos para la sección de vuelos */
+.nuestros-vuelos {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.nuestros-vuelos h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 auto 3rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.nuestros-vuelos h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+}
+
+/* Contenedor de vuelos */
+.vuelos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo de cada vuelo */
+.vuelo {
+    background: var(--blanco);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vuelo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--dorado);
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.vuelo:hover::before {
+    transform: scaleX(1);
+}
+
+.vuelo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido del vuelo */
+.vuelo h3 {
+    color: var(--negro);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.vuelo p {
+    color: var(--gris);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Detalle decorativo (silueta de avión) */
+.nuestros-vuelos::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>') no-repeat center;
+    opacity: 0.2;
+    animation: fly 10s infinite ease-in-out;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .vuelos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nuestros-vuelos h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .vuelos-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .nuestros-vuelos {
+        padding: 3rem 1rem;
+    }
+
+    .nuestros-vuelos h2 {
+        font-size: 2rem;
+    }
+
+    .vuelo {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vuelo h3 {
+        font-size: 1.4rem;
+    }
+
+    .vuelo p {
+        font-size: 0.9rem;
+    }
+
+    .nuestros-vuelos h2 {
+        font-size: 1.8rem;
+    }
+
+    .nuestros-vuelos::before {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Estilo para 'Nuestra Flota' */
+.flota-aerea {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.flota-aerea h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.flota-aerea h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+}
+
+/* Descripción */
+.flota-aerea > p {
+    color: var(--gris);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 auto 3rem;
+    max-width: 800px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contenedor de la galería */
+.flota-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo de cada item de la flota */
+.flota-item {
+    background: var(--blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.flota-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.flota-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.flota-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Texto descriptivo */
+.flota-item p {
+    color: var(--negro);
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Detalle decorativo (hélice giratoria) */
+.flota-aerea::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1"><path d="M12 2v10m0 0l-8 2m8-2l8 2m-8-10a10 10 0 0 1 10 10c0 1.5-.5 3-1.5 4.5M12 2a10 10 0 0 0-10 10c0 1.5.5 3 1.5 4.5"/></svg>') no-repeat center;
+    opacity: 0.3;
+    animation: spin 8s infinite linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .flota-gallery {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .flota-aerea h2 {
+        font-size: 2.2rem;
+    }
+
+    .flota-aerea > p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .flota-aerea {
+        padding: 3rem 1rem;
+    }
+
+    .flota-item img {
+        height: 200px;
+    }
+
+    .flota-aerea h2 {
+        font-size: 2rem;
+    }
+
+    .flota-aerea > p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flota-item p {
+        font-size: 1rem;
+    }
+
+    .flota-aerea h2 {
+        font-size: 1.8rem;
+    }
+
+    .flota-item img {
+        height: 180px;
+    }
+
+    .flota-aerea::before {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Estilos para la sección de seguridad aérea */
+.seguridad-aerea {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.seguridad-aerea h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.seguridad-aerea h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.seguridad-aerea h2:hover::after {
+    width: 150px;
+}
+
+/* Descripción */
+.seguridad-aerea p {
+    color: var(--gris);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.seguridad-aerea p:hover {
+    transform: scale(1.02);
+}
+
+/* Detalle decorativo (radar animado) */
+.seguridad-aerea::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--dorado) 10%, transparent 50%);
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    animation: radar 4s infinite linear;
+    z-index: 1;
+}
+
+.seguridad-aerea::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1"><path d="M12 2v10m0 0l-8 2m8-2l8 2"/></svg>') no-repeat center;
+    opacity: 0.2;
+    animation: float 6s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes radar {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .seguridad-aerea h2 {
+        font-size: 2.2rem;
+    }
+
+    .seguridad-aerea p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .seguridad-aerea {
+        padding: 3rem 1rem;
+    }
+
+    .seguridad-aerea h2 {
+        font-size: 2rem;
+    }
+
+    .seguridad-aerea p {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .seguridad-aerea::before {
+        width: 80px;
+        height: 80px;
+    }
+
+    .seguridad-aerea::after {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seguridad-aerea h2 {
+        font-size: 1.8rem;
+    }
+
+    .seguridad-aerea p {
+        font-size: 0.9rem;
+    }
+
+    .seguridad-aerea::before {
+        width: 60px;
+        height: 60px;
+        left: 5%;
+    }
+
+    .seguridad-aerea::after {
+        width: 50px;
+        height: 50px;
+        right: 5%;
+    }
+}
+
+/* Estilos para la sección de cursos y formación */
+.cursos-formacion {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.cursos-formacion h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 0 3rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.cursos-formacion h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.cursos-formacion h2:hover::after {
+    width: 150px;
+}
+
+/* Contenedor de cursos */
+.cursos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Estilo de cada curso */
+.curso {
+    background: var(--blanco);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+}
+
+.curso::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--celeste);
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.curso:hover::before {
+    transform: scaleX(1);
+}
+
+.curso:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido del curso */
+.curso h3 {
+    color: var(--negro);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.curso p {
+    color: var(--gris);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón */
+.curso .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--dorado);
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.curso .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.curso .btn:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.curso .btn:hover {
+    background: var(--celeste);
+    color: var(--blanco);
+}
+
+/* Detalle decorativo (ala animada) */
+.cursos-formacion::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1"><path d="M3 12h18l-6 6m-12-6l6-6"/></svg>') no-repeat center;
+    opacity: 0.2;
+    animation: glide 8s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes glide {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .cursos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cursos-formacion h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursos-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cursos-formacion {
+        padding: 3rem 1rem;
+    }
+
+    .cursos-formacion h2 {
+        font-size: 2rem;
+    }
+
+    .curso {
+        padding: 1.5rem;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .curso h3 {
+        font-size: 1.4rem;
+    }
+
+    .curso p {
+        font-size: 0.9rem;
+    }
+
+    .curso .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .cursos-formacion h2 {
+        font-size: 1.8rem;
+    }
+
+    .cursos-formacion::before {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cursos-formacion {
+        padding: 2rem 0.5rem;
+    }
+}
+
+/* Estilos para la sección de eventos y actividades */
+.eventos {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.eventos h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 0 3rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.eventos h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.eventos h2:hover::after {
+    width: 150px;
+}
+
+/* Contenedor de eventos */
+.eventos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Estilo de cada evento */
+.evento {
+    background: var(--blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.evento:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.evento img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.evento:hover img {
+    transform: scale(1.1);
+}
+
+/* Contenido del evento */
+.evento h3 {
+    color: var(--negro);
+    font-size: 1.6rem;
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.evento p {
+    color: var(--gris);
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.evento span {
+    display: block;
+    color: var(--celeste);
+    font-size: 0.95rem;
+    padding: 0 1rem 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Detalle decorativo (trazo de avión) */
+.eventos::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1" stroke-dasharray="5,5"><path d="M3 12h18m-6 6l6-6m-6 6l-6-6"/></svg>') no-repeat center;
+    opacity: 0.2;
+    animation: trail 6s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes trail {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .eventos-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .eventos h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .eventos {
+        padding: 3rem 1rem;
+    }
+
+    .eventos h2 {
+        font-size: 2rem;
+    }
+
+    .evento img {
+        height: 180px;
+    }
+
+    .evento {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos h2 {
+        font-size: 1.8rem;
+    }
+
+    .evento h3 {
+        font-size: 1.4rem;
+    }
+
+    .evento p {
+        font-size: 0.9rem;
+    }
+
+    .evento span {
+        font-size: 0.85rem;
+    }
+
+    .evento img {
+        height: 150px;
+    }
+
+    .eventos {
+        padding: 2rem 0.5rem;
+    }
+
+    .eventos::before {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Estilos para la sección de testimonios */
+.testimonios {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+/* Título */
+.testimonios h2 {
+    color: var(--negro);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0 0 3rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    max-width: 800px;
+}
+
+.testimonios h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--dorado);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.testimonios h2:hover::after {
+    width: 150px;
+}
+
+/* Contenedor de testimonios */
+.testimonios-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Estilo de cada testimonio */
+.testimonio {
+    background: var(--blanco);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.testimonio::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 3rem;
+    color: var(--celeste);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.testimonio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido del testimonio */
+.testimonio p {
+    color: var(--gris);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonio span {
+    display: block;
+    color: var(--negro);
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Detalle decorativo (estrella de aviación) */
+.testimonios::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') no-repeat center;
+    opacity: 0.2;
+    animation: twinkle 5s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    0% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 0.2; }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 1024px) {
+    .testimonios-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .testimonios h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonios {
+        padding: 3rem 1rem;
+    }
+
+    .testimonios h2 {
+        font-size: 2rem;
+    }
+
+    .testimonio {
+        padding: 1.5rem;
+        max-width: 400px;
+    }
+
+    .testimonio p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonios h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonio p {
+        font-size: 0.9rem;
+    }
+
+    .testimonio span {
+        font-size: 0.85rem;
+    }
+
+    .testimonio::before {
+        font-size: 2.5rem;
+    }
+
+    .testimonios {
+        padding: 2rem 0.5rem;
+    }
+
+    .testimonios::before {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Estilos del footer */
+.footer {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
+    color: var(--blanco);
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    padding: 1rem;
+}
+
+.footer-section h3 {
+    color: var(--dorado);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--dorado);
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.75rem 0;
+}
+
+.footer-section ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a:hover {
+    color: var(--dorado);
+    transform: translateX(5px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: var(--dorado);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--celeste);
+    text-decoration: underline;
+}
+
+/* Detalle decorativo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--dorado);
+    opacity: 0.7;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animaciones */
+.footer-section {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
