@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Efecto Typewriter para "Acla"
     const typewriterElement = document.getElementById('typewriter');
-    const text = "Aeroclub Lago Argentino";
+    const text = "A.C.L.A";
     let index = 0;
 
     function typeWriter() {
