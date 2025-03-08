@@ -97,11 +97,11 @@ header {
 .navbar {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--navbar-padding) 2rem;
+    margin: 20px auto;
+    padding: var(--navbar-padding) 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     position: relative;
     width: 100vw;
 }
@@ -130,7 +130,7 @@ header {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 /* Items de la navegación */

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Agregar ícono de avioncito al final
             const icon = document.createElement('i');
-            icon.classList.add('bx', 'bxs-plane-take-off'); // Ícono de avión despegando
+            icon.classList.add(''); // Ícono de avión despegando
             typewriterElement.appendChild(icon);
 
             // Pausa antes de reiniciar
