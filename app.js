@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Aeroclub Lago Argentino";
+    const text = "A.C.L.A";
     const textContainer = document.getElementById('typewriter-text');
     let index = 0;
     let forward = true;

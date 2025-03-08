@@ -73,49 +73,49 @@ body::after {
 /* Variables globales para tipografía */
 :root {
   --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
-  --logo-text-size: 1.5rem;
-  --logo-text-color: #333;
+--logo-text-size: 1.5rem;
+--logo-text-color: #333;
   --marquee-duration: 15s; /* Duración de la animación */
 }
 
 /* Contenedor principal del logo */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+display: flex;
+align-items: center;
+gap: 1rem;
 }
 
 /* Estilos para la imagen del logo */
 .logo img {
-  max-height: 80px;
-  width: auto;
+max-height: 80px;
+width: auto;
 }
 
 /* Contenedor para el texto en movimiento */
 .logo-text-container {
-  overflow: hidden;
-  position: relative;
-  flex: 1;
+overflow: hidden;
+position: relative;
+flex: 1;
 }
 
 /* Estilo del texto que se repite en bucle */
 .logo-text {
-  display: inline-block;
-  font-family: var(--primary-font);
-  font-size: var(--logo-text-size);
-  color: var(--logo-text-color);
-  white-space: nowrap;
-  animation: marquee var(--marquee-duration) linear infinite;
+display: inline-block;
+font-family: var(--primary-font);
+font-size: var(--logo-text-size);
+color: var(--logo-text-color);
+white-space: nowrap;
+animation: marquee var(--marquee-duration) linear infinite;
 }
 
 /* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
 @keyframes marquee {
-  0% {
+0% {
     transform: translateX(100%);
-  }
-  100% {
+}
+100% {
     transform: translateX(-100%);
-  }
+}
 }
 
 
@@ -127,51 +127,51 @@ body::after {
     --font-family-typewriter: 'Courier New', Courier, monospace;
     --text-color: #333;
     --font-size: 1.5rem;
-  }
-  
+}
+
   /* Contenedor que agrupa el logo y el texto typewriter */
-  .logo-container {
+.logo-container {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
     transition: transform var(--transition-duration) ease;
-  }
-  
+}
+
   /* Hover para agrandar logo y texto */
-  .logo-container:hover {
+.logo-container:hover {
     transform: scale(var(--hover-scale));
-  }
-  
+}
+
   /* Estilo de la imagen del logo */
-  .logo-image {
+.logo-image {
     max-height: 80px;
     width: auto;
-  }
-  
+}
+
   /* Contenedor del efecto typewriter */
-  .typewriter {
+.typewriter {
     font-family: var(--font-family-typewriter);
     font-size: var(--font-size);
     color: var(--text-color);
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid var(--text-color);
-  }
-  
+}
+
   /* Efecto de parpadeo en el cursor */
-  .caret {
+.caret {
     display: inline-block;
     width: 2px;
     background-color: var(--text-color);
     margin-left: 2px;
     animation: blink 0.8s step-start infinite;
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     50% { opacity: 0; }
-  }
-  
+}
+
 
 
 
@@ -481,6 +481,21 @@ header {
     }
 }
 
+/* Media Queries adicionales para celulares */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    .logo img {
+        max-height: 70px;
+    }
+    .nav-links a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+
 /* Estilos para la sección de artículos */
 .articulos {
     padding: 4rem 2rem;
@@ -697,6 +712,15 @@ header {
 }
 
 /* Estilos para la sección de vuelos */
+/* Estilos para la imagen en cada vuelo */
+.vuelo-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+}
+
 .nuestros-vuelos {
     padding: 4rem 2rem;
     position: relative;
