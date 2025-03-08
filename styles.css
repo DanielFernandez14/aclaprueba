@@ -403,7 +403,7 @@ header {
 
 /* Variables globales para fácil mantenimiento */
 :root {
-    --carousel-bg: #f5f5f5;
+    --carousel-bg: linear-gradient(260deg, #e0f7fae5, #b3e5fc, #81d4faa7, #4fc2f76a); /* Gradiente inspirado en el Glaciar Perito Moreno */
     --border-radius: 10px;
     --transition-duration: 0.5s;
 }
@@ -411,13 +411,14 @@ header {
 /* Contenedor principal del carrusel */
 .carousel-container {
     width: 100%;
-    height: 600px; /* Altura para imágenes verticales */
+    height: 600px; /* Altura para imágenes horizontales */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     border-radius: var(--border-radius);
-    /* background-color: var(--carousel-bg); */
+    background: var(--carousel-bg); /* Fondo con gradiente de glaciar */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
 }
   
 /* Carrusel (contenedor interno de las imágenes) */
@@ -436,12 +437,12 @@ header {
     padding: 0.5rem; /* Pequeño espacio entre imágenes */
 }
   
-/* Estilo de las imágenes */
+/* Estilo de las imágenes (ajustadas para ser del mismo tamaño sin distorsión) */
 .carousel-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;           /* Ajusta la imagen para cubrir el contenedor */
-    object-position: center;     /* Centrado de la imagen */
+    height: 100%; /* Asegura que todas las imágenes tengan la misma altura que el contenedor */
+    object-fit: contain; /* Muestra la imagen completa sin recorte, ideal para horizontales */
+    object-position: center; /* Centrado de la imagen */
     border-radius: var(--border-radius);
     transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
 }
@@ -523,6 +524,8 @@ header {
       }
     }
 }
+
+
 
 
 
