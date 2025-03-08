@@ -32,44 +32,13 @@ body {
 /* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
 /* Animación de nubes moviéndose detrás */
 /* Fondo con nubes moviéndose */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x;
-    opacity: 0.4;
-    animation: moveClouds 60s linear infinite;
-    z-index: -1;
-}
+/* Fondo de nubes rápidas (antes) */
 
-/* Capa de nubes con movimiento más suave y sutil */
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x;
-    opacity: 0.6;
-    animation: moveCloudsSlow 120s linear infinite;
-    z-index: -2;
-}
 
-/* Animación de nubes rápidas */
-@keyframes moveClouds {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
 
-/* Animación de nubes lentas */
-@keyframes moveCloudsSlow {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-30%); }
-}
+
+
+
 
 /* Variables globales para tipografía */
 :root {
@@ -284,26 +253,26 @@ body::after {
   /* Vista para pantallas medianas (hasta 768px) */
   @media (max-width: 768px) {
     .navbar {
-      padding: var(--navbar-padding) 1.5rem;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    padding: var(--navbar-padding) 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
     }
     
     /* Mostrar menú hamburguesa */
     .menu-toggle {
-      display: flex;
+    display: flex;
     }
     
     /* Ocultar enlaces de navegación por defecto */
     .nav-links {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      background: rgba(255, 255, 255, 0.95);
-      position: absolute;
-      top: 100%;
-      left: 0;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
     
     /* Mostrar navegación cuando se activa */
