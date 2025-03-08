@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros - ACLA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./estilos nuevos/nosotros.css">
+  <link rel="stylesheet" href="nubes.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo-container">
-        <a href="index.html">
+        <a href="./index.html">
           <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
         </a>
       </div>
@@ -32,10 +33,83 @@
       </div>
     </nav>
   </header>
+
+  <br><br><br><br><br><br>
+
+
+
   <main>
-    <h1>Nosotros</h1>
-    <p>Aquí encontrarás información sobre quiénes somos y nuestra historia.</p>
-  </main>
-  <script src="script.js"></script>
+    <section class="nosotros">
+        <h1>Nosotros</h1>
+        <p class="subtitle">Aquí encontrarás información sobre quiénes somos y nuestra historia.</p>
+        <div class="cards-container">
+            <div class="intro">
+                <input type="checkbox" id="intro">
+                <label for="intro"></label>
+                <h2>Introducción</h2>
+                <p>El Aeroclub Lago Argentino es una institución emblemática en El Calafate, Argentina, con una rica historia de más de 50 años. Fundado en 1972 por un grupo de vecinos apasionados por la aviación, el aeroclub ha sido un pilar en la comunidad, sirviendo no solo en momentos de emergencia, como accidentes o incendios forestales, sino también como un centro de formación y recreación para pilotos y entusiastas de la aviación.</p>
+            </div>
+            <div class="historia">
+                <input type="checkbox" id="historia">
+                <label for="historia"></label>
+                <h2>Historia</h2>
+                <p>El Aeroclub Lago Argentino fue fundado el 3 de mayo de 1972 en El Calafate, una localidad con alrededor de 860 habitantes en ese momento. La institución comenzó con la compra de su primer avión y la construcción de un hangar, y a lo largo de los años ha enfrentado desafíos y logrado importantes hitos.</p>
+                <p>Uno de los logros más significativos del aeroclub es la creación de la Escuela de Vuelo "Malvinas Argentinas", que ofrece a los jóvenes y a los no tan jóvenes la oportunidad de obtener su habilitación como pilotos privados. La escuela ha sido un semillero de futuros pilotos argentinos y ha brindado a los habitantes de El Calafate la posibilidad de capacitarse sin tener que migrar a otras regiones.</p>
+                <p>En 2022, el aeroclub celebró su 50 aniversario, un hito que refleja su compromiso con la aviación y la comunidad. Durante este tiempo, ha sido parte integral de la vida en El Calafate, ofreciendo vuelos de bautismo, excursiones aéreas y servicios de hangaraje.</p>
+            </div>
+            <div class="actividades">
+                <input type="checkbox" id="actividades">
+                <label for="actividades"></label>
+                <h2>Actividades actuales</h2>
+                <p>Hoy en día, el Aeroclub Lago Argentino continúa siendo un centro de formación y recreación para pilotos y entusiastas de la aviación. La Escuela de Vuelo "Malvinas Argentinas" sigue formando a nuevos pilotos, y el aeroclub ofrece vuelos recreativos para turistas y personas que desean observar la imponente belleza del Lago Argentino y el Glaciar Perito Moreno desde el aire.</p>
+                <p>Además, el aeroclub es un lugar de encuentro para la comunidad aeronáutica, donde se comparten experiencias, se celebran eventos y se promueve la aviación en la región.</p>
+            </div>
+            <div class="unete">
+                <input type="checkbox" id="unete">
+                <label for="unete"></label>
+                <h2>Únete a nosotros</h2>
+                <p>Si estás interesado en la aviación, te invitamos a unirte al Aeroclub Lago Argentino. Ya sea que desees convertirte en piloto, disfrutar de un vuelo recreativo o simplemente compartir tu pasión por la aviación, aquí encontrarás un lugar acogedor y una comunidad apasionada.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Acerca de Nosotros</h3>
+            <p>Somos un aeroclub dedicado a la aviación recreativa, con el objetivo de promover la aviación general y ofrecer formación de alta calidad.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./novedades.html">Novedades</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li><a href="mailto:contacto@aeroclub.com">contacto@aeroclub.com</a></li>
+                <li><a href="tel:+123456789">2966-282828</a></li>
+                <li>Aeropuerto El Calafate</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 ACLA - Todos los derechos reservados</p>
+        <p>Desarrollado por <a href="#">Daniel Matías Fernández</a></p>
+    </div>
+</footer>
+
+
+
+
+
+  <script src="app.js"></script>
 </body>
 </html>
