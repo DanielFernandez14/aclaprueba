@@ -1,0 +1,150 @@
+/* ========================================================
+   RESET Y CONFIGURACIÓN BÁSICA
+======================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2c3e50;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+/* ========================================================
+   CANVAS DE FONDO CON PARTÍCULAS
+======================================================== */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #2c3e50, #bdc3c7);
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ========================================================
+   CONTENEDOR PRINCIPAL
+======================================================== */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ========================================================
+   HEADER / HERO
+======================================================== */
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); }
+  50% { text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 255, 255, 0.8); }
+}
+
+/* ========================================================
+   SECCIÓN FLOTANTE DE TECNOLOGÍAS
+======================================================== */
+.tech-float {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ========================================================
+   ESTILOS DE CADA TARJETA (TECH-CARD)
+======================================================== */
+.tech-card {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%; /* Circulares como burbujas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+/* Efecto al pasar el mouse */
+.tech-card:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  filter: brightness(1.2);
+}
+
+/* Efecto de "pop" al hacer clic */
+.tech-card.pop {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* Colores y degradados para cada tecnología */
+.tech-card.html { background: linear-gradient(135deg, #E44D26, #f16529); }
+.tech-card.css { background: linear-gradient(135deg, #264de4, #2965f1); }
+.tech-card.js { background: linear-gradient(135deg, #F0DB4F, #efd81d); color: #333; }
+.tech-card.react { background: linear-gradient(135deg, #61DBFB, #21a1f1); color: #333; }
+.tech-card.nodejs { background: linear-gradient(135deg, #68A063, #3c873a); }
+.tech-card.github { background: linear-gradient(135deg, #333, #24292e); }
+.tech-card.git { background: linear-gradient(135deg, #F05032, #e84e30); }
+
+/* Estilos para icono y etiqueta */
+.tech-card i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tech-card span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN
+======================================================== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.2rem; }
+  .tech-card { width: 100px; height: 100px; }
+  .tech-card i { font-size: 2.2rem; }
+  .tech-card span { font-size: 1rem; }
+}

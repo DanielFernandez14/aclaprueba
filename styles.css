@@ -544,14 +544,6 @@ header {
     --shadow-color: rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
-/* Estilo general del body */
-
-
-/* Contenedor del encabezado */
-
-
-
-
 /* Estilo para el texto con efecto typewriter */
 #typewriter {
     font-size: 1.5rem;
