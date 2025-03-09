@@ -97,11 +97,11 @@ header {
 .navbar {
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: var(--navbar-padding) 1rem;
+    margin: 0 auto;
+    padding: var(--navbar-padding) 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     position: relative;
     width: 100vw;
 }
@@ -130,7 +130,7 @@ header {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: 10px;
+    padding: 0;
 }
 
 /* Items de la navegación */
@@ -392,8 +392,6 @@ header {
         transform: translateY(0);
     }
 }
-
-
 
 
 
