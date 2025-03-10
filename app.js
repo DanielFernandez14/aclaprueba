@@ -20,27 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Efecto Typewriter mejorado
     const typewriterElement = document.getElementById('typewriter');
-    const text = "A.C.L.A"; // Texto a animar
-    let index = 0;
+
+    function getTypewriterText() {
+        // Usamos matchMedia para detectar pantallas menores o iguales a 1024px (mobile y tablet)
+        return window.matchMedia('(max-width: 1024px)').matches ? "Aeroclub Lago Argentino" : "A.C.L.A";
+    }
 
     function typeWriter() {
-        if (index < text.length) {
-            typewriterElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 150); // Velocidad de escritura
-        } else {
-            // Agregar ícono de avioncito al final
-            const icon = document.createElement('i');
-            icon.classList.add(''); // Ícono de avión despegando
-            typewriterElement.appendChild(icon);
+        const text = getTypewriterText();
+        let index = 0;
+        typewriterElement.textContent = ""; // Limpiar antes de iniciar la animación
 
-            // Pausa antes de reiniciar
-            setTimeout(() => {
-                typewriterElement.textContent = ""; // Limpiar texto e ícono
-                index = 0;
-                typeWriter(); // Reiniciar animación
-            }, 3000); // Pausa de 3 segundos
+        function write() {
+            if (index < text.length) {
+                typewriterElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(write, 150); // Velocidad de escritura
+            } else {
+                // Agregar ícono de avioncito al final
+                const icon = document.createElement('i');
+                icon.classList.add(''); // Ícono de avión despegando
+                typewriterElement.appendChild(icon);
+
+                // Pausa antes de reiniciar
+                setTimeout(() => {
+                    typeWriter(); // Reiniciar animación
+                }, 3000); // Pausa de 3 segundos
+            }
         }
+        write();
     }
 
     // Iniciar el efecto
