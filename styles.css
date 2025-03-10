@@ -25,49 +25,31 @@ body {
     position: relative;
     overflow-x: hidden;
     color: #333;
-    
 }
-
-
-
-/* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
-/* Animación de nubes moviéndose detrás */
-/* Fondo con nubes moviéndose */
-/* Fondo de nubes rápidas (antes) */
-
-
-
-
-
-
 
 /* Variables globales para tipografía */
 :root {
   --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
---logo-text-size: 1.5rem;
---logo-text-color: #333;
+  --logo-text-size: 1.5rem;
+  --logo-text-color: #333;
   --marquee-duration: 15s; /* Duración de la animación */
 }
 
-
-
 /* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
 @keyframes marquee {
-0% {
-    transform: translateX(100%);
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
-100% {
-    transform: translateX(-100%);
-}
-}
-
-
 
 /* ================================
    Variables Globales
 ================================ */
 :root {
-    --primary-color: rgba(117, 170, 219, 0.9);
+    --primary-color: rgb(117, 170, 219);
     --secondary-color: rgba(255, 255, 255, 0.9);
     --text-color: #333;
     --accent-color: #ffd700;
@@ -76,13 +58,12 @@ body {
     --bg-hover: rgba(255, 215, 0, 0.1);
     --navbar-padding: 1rem;
     --border-radius: 10px;
-  }
-  
-  /* ================================
-     Header y Navbar
-  ================================ */
-  
- /* Header fijo con degradado y sombra */
+}
+
+/* ================================
+   Header y Navbar
+================================ */
+
 /* Header fijo con degradado y sombra */
 header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -103,7 +84,6 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 100vw;
 }
 
 /* Contenedor del Logo */
@@ -131,12 +111,13 @@ header {
     align-items: center;
     margin: 0;
     padding: 0;
+    gap: 1rem; /* Espaciado reducido entre los enlaces */
+    margin-left: auto; /* Corrige los enlaces completamente a la derecha */
 }
 
 /* Items de la navegación */
 .nav-links li {
     position: relative;
-    margin: 0 0.5rem;
 }
 
 /* Enlaces de navegación */
@@ -154,7 +135,7 @@ header {
 .nav-links a:hover {
     color: var(--accent-color);
     background: var(--bg-hover);
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 /* Espaciado para íconos */
@@ -378,7 +359,6 @@ header {
     }
 }
 
-
 /* ================================
    Animaciones adicionales para menú móvil
 =============================== */
@@ -393,21 +373,13 @@ header {
     }
 }
 
-
-
-
-
-
-
-
-
 /* Variables globales para fácil mantenimiento */
 :root {
     --carousel-bg: linear-gradient(260deg, #e0f7fae5, #b3e5fc, #81d4faa7, #4fc2f76a); /* Gradiente inspirado en el Glaciar Perito Moreno */
     --border-radius: 10px;
     --transition-duration: 0.5s;
 }
-  
+
 /* Contenedor principal del carrusel */
 .carousel-container {
     width: 100%;
@@ -420,14 +392,14 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding-top: 2rem;
 }
-  
+
 /* Carrusel (contenedor interno de las imágenes) */
 .carousel {
     display: flex;
     /* Animación para desplazamiento de ida y vuelta */
     animation: scrollCarousel 20s linear infinite;
 }
-  
+
 /* Cada item del carrusel */
 .carousel-item {
     flex: 0 0 calc(100% / 3); /* Se muestran 3 imágenes por pantalla en vista de escritorio */
@@ -436,7 +408,7 @@ header {
     overflow: hidden;
     padding: 0.5rem; /* Pequeño espacio entre imágenes */
 }
-  
+
 /* Estilo de las imágenes (ajustadas para ser del mismo tamaño sin distorsión) */
 .carousel-item img {
     width: 100%;
@@ -446,13 +418,13 @@ header {
     border-radius: var(--border-radius);
     transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
 }
-  
+
 /* Efecto al pasar el ratón */
 .carousel-item img:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
-  
+
 /* Animación base para 3 imágenes visibles con movimiento de ida y vuelta */
 @keyframes scrollCarousel {
     0% {
@@ -465,16 +437,16 @@ header {
       transform: perspective(1000px) translateX(0) rotateY(10deg);
     }
 }
-  
+
 /* Responsividad */
-  
+
 /* Pantallas medianas: ajuste de altura */
 @media (max-width: 1024px) {
     .carousel-container {
       height: 500px;
     }
 }
-  
+
 /* Pantallas pequeñas: se muestran 2 imágenes a la vez */
 @media (max-width: 768px) {
     .carousel-container {
@@ -499,7 +471,7 @@ header {
       }
     }
 }
-  
+
 /* Pantallas extra pequeñas: se muestra 1 imagen a la vez */
 @media (max-width: 480px) {
     .carousel-container {
@@ -525,21 +497,13 @@ header {
     }
 }
 
-
-
-
-
-
-
-
-
 /* styles.css */
 
 /* Variables para el tema de aviación */
 :root {
     --primary-color: #75AADB;    /* Azul profundo */
     --secondary-color: #f5f7fac5;  /* Gris claro */
-    --accent-color: #006affdd;     /* Celeste brillante */
+    --accent-color: #000000;     /* Celeste brillante */
     --text-color: #ffffffdb;       /* Blanco */
     --shadow-color: rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
@@ -589,23 +553,6 @@ header {
         font-size: 1rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Estilos para la sección de artículos */
 .articulos {
@@ -1927,7 +1874,6 @@ header {
 }
 
 /* Estilos del footer */
-/* Estilos del footer */
 .footer {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
     color: #fff; /* Reemplacé var(--blanco) por un valor directo */
@@ -2105,6 +2051,7 @@ header {
         }
     }
 }
+
 /* Estilos para el efecto de aparición al hacer scroll */
 .reveal {
     opacity: 0;

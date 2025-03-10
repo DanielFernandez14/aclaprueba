@@ -7,6 +7,19 @@
     --celeste: #75AADB;
     --blanco-bandera: #FFFFFF;
     --sol-dorado: #FFD700;
+    --primary-font: 'Montserrat', sans-serif;
+    --logo-text-size: 1.5rem;
+    --logo-text-color: #333;
+    --marquee-duration: 15s;
+    --primary-color: rgba(117, 170, 219, 0.9);
+    --secondary-color: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
+    --accent-color: #ffd700;
+    --celeste: #7ec8e3;
+    --blanco: #fff;
+    --bg-hover: rgba(255, 215, 0, 0.1);
+    --navbar-padding: 1rem;
+    --border-radius: 10px;
 }
 
 /* Reset básico y estilos generales */
@@ -27,20 +40,7 @@ body {
     color: #333;
 }
 
-/* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
-/* Animación de nubes moviéndose detrás */
-/* Fondo con nubes moviéndose */
-/* Fondo de nubes rápidas (antes) */
-
-/* Variables globales para tipografía */
-:root {
-  --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
-  --logo-text-size: 1.5rem;
-  --logo-text-color: #333;
-  --marquee-duration: 15s; /* Duración de la animación */
-}
-
-/* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
+/* Keyframes para el efecto marquee */
 @keyframes marquee {
     0% {
         transform: translateX(100%);
@@ -50,26 +50,7 @@ body {
     }
 }
 
-/* ================================
-   Variables Globales
-================================ */
-:root {
-    --primary-color: rgba(117, 170, 219, 0.9);
-    --secondary-color: rgba(255, 255, 255, 0.9);
-    --text-color: #333;
-    --accent-color: #ffd700;
-    --celeste: #7ec8e3;
-    --blanco: #fff;
-    --bg-hover: rgba(255, 215, 0, 0.1);
-    --navbar-padding: 1rem;
-    --border-radius: 10px;
-}
-
-/* ================================
-   Header y Navbar
-=============================== */
-
-/* Header fijo con degradado y sombra */
+/* Header y Navbar */
 header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -79,7 +60,6 @@ header {
     z-index: 1000;
 }
 
-/* Contenedor de la Navbar */
 .navbar {
     width: 100%;
     max-width: 1200px;
@@ -89,28 +69,23 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 100vw;
 }
 
-/* Contenedor del Logo */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
-/* Imagen del Logo */
 .logo-container img {
     max-height: 90px;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
-/* Efecto hover en el logo */
 .logo-container img:hover {
     transform: scale(1.3);
 }
 
-/* Lista de enlaces de navegación */
 .nav-links {
     list-style: none;
     display: flex;
@@ -119,13 +94,11 @@ header {
     padding: 0;
 }
 
-/* Items de la navegación */
 .nav-links li {
     position: relative;
     margin: 0 0.5rem;
 }
 
-/* Enlaces de navegación */
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
@@ -136,23 +109,17 @@ header {
     transition: color 0.3s ease, background 0.3s ease;
 }
 
-/* Hover en enlaces */
 .nav-links a:hover {
     color: var(--accent-color);
     background: var(--bg-hover);
     border-radius: 5px;
 }
 
-/* Espaciado para íconos */
 .nav-links i {
     margin-right: 0.5rem;
 }
 
-/* ================================
-   Dropdown Menú
-=============================== */
-
-/* Dropdown oculto por defecto */
+/* Dropdown Menú */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -166,30 +133,25 @@ header {
     z-index: 1000;
 }
 
-/* Muestra el dropdown al hover */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Items del dropdown */
 .dropdown-menu li {
     margin: 0;
 }
 
-/* Enlaces dentro del dropdown */
 .dropdown-menu a {
     padding: 0.75rem 1rem;
     display: block;
     color: var(--text-color);
 }
 
-/* Hover en el dropdown */
 .dropdown-menu a:hover {
     background: var(--celeste);
     color: var(--blanco);
 }
 
-/* Animación para dropdown */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -201,18 +163,13 @@ header {
     }
 }
 
-/* ================================
-   Menú Hamburguesa
-=============================== */
-
-/* Inicialmente oculto en escritorio */
+/* Menú Hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
-/* Barras del menú */
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
@@ -221,7 +178,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Animaciones al activar el menú */
 .menu-toggle.active .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -234,156 +190,52 @@ header {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ================================
-   Responsive para pantallas medianas (hasta 768px)
-=============================== */
-@media (max-width: 768px) {
-    .navbar {
-        padding: var(--navbar-padding) 1.5rem;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    /* Mostrar menú hamburguesa */
-    .menu-toggle {
-        display: flex;
-    }
-    
-    /* Ocultar enlaces de navegación por defecto */
-    .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Mostrar navegación cuando se activa con efecto profesional */
-    .nav-links.active {
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        display: flex;
-        animation: menuSlideIn 0.5s ease forwards;
-    }
-    
-    /* Centrar cada item en el menú móvil */
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-    }
-    
-    /* Ajuste para dropdown en móvil */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        padding-left: 1rem;
-    }
+/* Estilos para la sección Aula Virtual */
+.aula-virtual {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin: 20px auto 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* ================================
-   Responsive para pantallas muy pequeñas (hasta 480px)
-=============================== */
-@media (max-width: 480px) {
-    .navbar {
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        padding: var(--navbar-padding) 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    /* Logo a la izquierda */
-    .logo-container {
-        order: 1;
-    }
-    
-    .logo-container img {
-        max-height: 70px;
-    }
-    
-    /* Menú hamburguesa a la derecha */
-    .menu-toggle {
-        order: 2;
-        display: flex;
-    }
-    
-    /* Estilado para los enlaces de navegación en móvil */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        z-index: 1000;
-    }
-    
-    .nav-links.active {
-        display: flex;
-        animation: menuSlideIn 0.5s ease forwards;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-    }
-    
-    .nav-links a {
-        display: block;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        color: var(--text-color);
-        position: relative;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-        background: var(--bg-hover);
-        border-radius: 5px;
-        color: var(--accent-color);
-    }
-    
-    @keyframes menuSlideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+.aula-virtual:hover {
+    transform: translateY(-5px);
 }
 
-/* ================================
-   Animaciones adicionales para menú móvil
-=============================== */
-@keyframes menuSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.aula-virtual-titulo {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
+.aula-virtual-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
 
+.aula-virtual-link {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--blanco);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
 
+.aula-virtual-link:hover {
+    background: var(--dorado);
+    transform: scale(1.05);
+}
 
-
-
-/*MAIN*/
 /* Estilos para el main de la Escuela de Vuelo */
 .escuela-vuelo {
     position: relative;
@@ -394,25 +246,23 @@ header {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-  }
-  
-  /* Fondo decorativo sutil relacionado con la aviación */
-  .escuela-vuelo::before {
+}
+
+.escuela-vuelo::before {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background-image: url('flight-bg.jpg'); /* Imagen temática de aviación */
+    background-image: url('flight-bg.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
     transform: rotate(15deg);
-  }
-  
-  /* Título principal con efecto interactivo */
-  .titulo-principal {
+}
+
+.titulo-principal {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     text-align: center;
@@ -423,16 +273,15 @@ header {
     z-index: 1;
     margin-bottom: 30px;
     transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .titulo-principal:hover {
+}
+
+.titulo-principal:hover {
     transform: scale(1.05);
     color: #ffea00;
     text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.8);
-  }
-  
-  /* Línea animada debajo del título */
-  .titulo-principal::after {
+}
+
+.titulo-principal::after {
     content: '';
     display: block;
     margin: 10px auto;
@@ -440,14 +289,13 @@ header {
     height: 4px;
     background: #ffd700;
     transition: width 0.5s ease;
-  }
-  
-  .titulo-principal:hover::after {
+}
+
+.titulo-principal:hover::after {
     width: 50%;
-  }
-  
-  /* Botón interactivo de ejemplo (puedes agregarlo donde desees) */
-  .escuela-vuelo .btn-explorar {
+}
+
+.escuela-vuelo .btn-explorar {
     display: inline-block;
     background: #ffd700;
     color: #0e2a47;
@@ -460,15 +308,14 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
-  }
-  
-  .escuela-vuelo .btn-explorar:hover {
+}
+
+.escuela-vuelo .btn-explorar:hover {
     background: #ffea00;
     transform: translateY(-5px);
-  }
-  
-  /* Estilos para secciones internas */
-  .escuela-vuelo section {
+}
+
+.escuela-vuelo section {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding: 20px 30px;
@@ -476,23 +323,22 @@ header {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .escuela-vuelo section:hover {
+}
+
+.escuela-vuelo section:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Títulos de sección */
-  .escuela-vuelo section .seccion-titulo {
+}
+
+.escuela-vuelo section .seccion-titulo {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     color: #0e2a47;
     margin-bottom: 10px;
     position: relative;
-  }
-  
-  .escuela-vuelo section .seccion-titulo::after {
+}
+
+.escuela-vuelo section .seccion-titulo::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -500,63 +346,33 @@ header {
     width: 60px;
     height: 3px;
     background: #ffd700;
-  }
-  
-  /* Descripción de cada sección */
-  .escuela-vuelo section .seccion-descripcion {
+}
+
+.escuela-vuelo section .seccion-descripcion {
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
     text-align: justify;
-  }
-  
-  /* Lista de cursos */
-  .escuela-vuelo .lista-cursos {
+}
+
+.escuela-vuelo .lista-cursos {
     list-style: none;
     padding: 0;
     margin: 20px 0 0;
-  }
-  
-  .escuela-vuelo .lista-cursos li {
+}
+
+.escuela-vuelo .lista-cursos li {
     background: rgba(14, 42, 71, 0.1);
     margin: 10px 0;
     padding: 15px;
     border-left: 5px solid #ffd700;
     transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .escuela-vuelo .lista-cursos li:hover {
+}
+
+.escuela-vuelo .lista-cursos li:hover {
     background: rgba(14, 42, 71, 0.2);
     transform: scale(1.01);
-  }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 /* Estilos del footer */
 .footer {
@@ -626,7 +442,6 @@ header {
     transform: translateX(5px);
 }
 
-/* Footer bottom */
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
@@ -652,7 +467,6 @@ header {
     text-decoration: underline;
 }
 
-/* Detalle decorativo */
 .footer::before {
     content: '';
     position: absolute;
@@ -662,50 +476,6 @@ header {
     height: 5px;
     background: #d4af37;
     opacity: 0.7;
-}
-
-/* Media Queries para footer */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .footer-section h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .footer-section ul li a {
-        justify-content: center;
-    }
-
-    .footer-section ul li a:hover {
-        transform: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 2rem 1rem 1rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1.3rem;
-    }
-
-    .footer-section p,
-    .footer-section ul li a {
-        font-size: 0.9rem;
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem;
-    }
 }
 
 /* Animaciones */
@@ -724,63 +494,246 @@ header {
     }
 }
 
-@media (max-width: 768px) {
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* ================================
+   Media Queries para Responsive
+=============================== */
+
+/* Tablets (hasta 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: var(--navbar-padding) 1.5rem;
+    }
+
+    .escuela-vuelo {
+        padding: 30px;
+        margin: 80px auto;
+    }
+
+    .titulo-principal {
+        font-size: 2.8rem;
+    }
+
+    .aula-virtual {
+        padding: 15px 20px;
+    }
+
+    .aula-virtual-titulo {
+        font-size: 1.8rem;
     }
 }
 
-/* ================================
-   Estilos para la sección Aula Virtual
-================================ */
-.aula-virtual {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid var(--accent-color);
-  border-radius: 10px;
-  padding: 20px 30px;
-  margin: 20px auto 40px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+/* Pantallas medianas (hasta 768px) */
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        font-size: 14px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: var(--navbar-padding) 1.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        display: flex;
+        animation: menuSlideIn 0.5s ease forwards;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+    }
+
+    /* Aula Virtual */
+    .aula-virtual {
+        padding: 15px 20px;
+        margin: 15px auto 30px;
+    }
+
+    .aula-virtual-titulo {
+        font-size: 1.6rem;
+    }
+
+    .aula-virtual-text {
+        font-size: 1rem;
+    }
+
+    .aula-virtual-link {
+        padding: 8px 16px;
+    }
+
+    /* Escuela de Vuelo */
+    .escuela-vuelo {
+        padding: 20px;
+        margin: 50px auto;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+
+    .escuela-vuelo section {
+        padding: 15px 20px;
+    }
+
+    .escuela-vuelo section .seccion-titulo {
+        font-size: 1.8rem;
+    }
+
+    .escuela-vuelo .lista-cursos li {
+        padding: 10px;
+    }
+
+    .escuela-vuelo .btn-explorar {
+        padding: 10px 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a {
+        justify-content: center;
+    }
+
+    .footer-section ul li a:hover {
+        transform: none;
+    }
 }
 
-.aula-virtual:hover {
-  transform: translateY(-5px);
+/* Pantallas pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    /* Ajustes generales */
+    body {
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: var(--navbar-padding) 1rem;
+    }
+
+    .logo-container img {
+        max-height: 70px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Aula Virtual */
+    .aula-virtual {
+        padding: 10px 15px;
+        margin: 10px auto 20px;
+    }
+
+    .aula-virtual-titulo {
+        font-size: 1.4rem;
+    }
+
+    .aula-virtual-text {
+        font-size: 0.9rem;
+    }
+
+    .aula-virtual-link {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Escuela de Vuelo */
+    .escuela-vuelo {
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .escuela-vuelo section {
+        padding: 10px 15px;
+    }
+
+    .escuela-vuelo section .seccion-titulo {
+        font-size: 1.5rem;
+    }
+
+    .escuela-vuelo section .seccion-descripcion {
+        font-size: 0.9rem;
+    }
+
+    .escuela-vuelo .lista-cursos li {
+        padding: 8px;
+    }
+
+    .escuela-vuelo .btn-explorar {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
 }
 
-.aula-virtual-titulo {
-  font-family: var(--primary-font);
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.aula-virtual-text {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  margin-bottom: 20px;
-}
-
-.aula-virtual-link {
-  display: inline-block;
-  background: var(--accent-color);
-  color: var(--blanco);
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.aula-virtual-link:hover {
-  background: var(--dorado);
-  transform: scale(1.05);
+/* Animación para menú móvil */
+@keyframes menuSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
