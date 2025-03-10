@@ -1,0 +1,422 @@
+/* ================================
+   Header - Estilos Profesionales y Responsive
+================================ */
+
+/* Header general */
+header {
+    width: 100%;
+    background-color: #062a49;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Navbar Container */
+  .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo Container */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo Link e Imagen */
+  .logo-link {
+    display: inline-block;
+  }
+  
+  .logo-image {
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-image:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Typewriter Container */
+  .typewriter-container {
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffd700;
+    font-size: 1.2rem;
+    position: relative;
+  }
+  
+  /* Caret para efecto typewriter */
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: #ffd700;
+    animation: blink 0.8s steps(2, start) infinite;
+    margin-left: 2px;
+  }
+  
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  /* Cada enlace de navegación */
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link:hover {
+    color: #ffd700;
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* ================================
+     Responsive: Tablet y Escritorio
+  ================================ */
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 10px 15px;
+    }
+    .nav-link {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* ================================
+     Responsive: Móvil
+  ================================ */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #062a49;
+      flex-direction: column;
+      align-items: center;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    
+    .nav-links li {
+      margin: 10px 0;
+    }
+    
+    .menu-toggle {
+      display: flex;
+    }
+    
+    /* Clase activa para mostrar el menú */
+    .nav-links.active {
+      max-height: 500px; /* Valor suficiente para mostrar todos los elementos */
+    }
+  }
+  
+
+/* ================================
+   Estilos para Aula Virtual
+================================ */
+
+/* Body y tipografía base se definen en el CSS global */
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(9,64,108,0.9), rgba(6,42,73,0.9));
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--dorado);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--blanco);
+    margin-bottom: 30px;
+  }
+  
+  .btn-primary {
+    background: var(--accent-color);
+    color: var(--blanco);
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary i {
+    margin-right: 8px;
+  }
+  
+  .btn-primary:hover {
+    background: var(--dorado);
+    transform: translateY(-3px);
+  }
+  
+  /* Secciones Generales */
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  
+  .btn-secondary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--blanco);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-secondary i {
+    margin-left: 5px;
+  }
+  
+  .btn-secondary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Estilos del footer */
+.footer {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
+    color: #fff; /* Reemplacé var(--blanco) por un valor directo */
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    padding: 1rem;
+}
+
+.footer-section h3 {
+    color: #d4af37; /* Reemplacé var(--dorado) por un valor directo */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d4af37; /* Reemplacé var(--dorado) */
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.75rem 0;
+}
+
+.footer-section ul li a {
+    color: #fff; /* Reemplacé var(--blanco) */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37; /* Reemplacé var(--dorado) */
+    transform: translateX(5px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: #d4af37; /* Reemplacé var(--dorado) */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #00b7eb; /* Reemplacé var(--celeste) por un valor directo */
+    text-decoration: underline;
+}
+
+/* Detalle decorativo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #d4af37; /* Reemplacé var(--dorado) */
+    opacity: 0.7;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-section {
+        text-align: center; /* Centra cada sección */
+    }
+
+    .footer-section h3::after {
+        left: 50%; /* Centra la línea decorativa */
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a {
+        justify-content: center; /* Centra los enlaces */
+    }
+
+    .footer-section ul li a:hover {
+        transform: none; /* Elimina el desplazamiento en hover */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem 1rem; /* Reduce el padding para que no sea tan grande */
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem; /* Reduce el tamaño del título */
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem; /* Reduce el tamaño del texto en footer-bottom */
+    }
+}
+
+/* Animaciones */
+.footer-section {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px); /* Animación más sutil */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

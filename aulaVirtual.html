@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Virtual - Manual de Vuelo</title>
+  <link rel="stylesheet" href="./estilos nuevos/aulaVirtual.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header y Navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <img src="img/LogoReal.png" alt="Aula Virtual" class="logo-image">
+        </a>
+        <div class="typewriter-container">
+          <span id="typewriter">Aula Virtual</span>
+          <span class="caret"></span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link"><i class='bx bx-home'></i> Inicio</a></li>
+        <li><a href="cursos.html" class="nav-link"><i class='bx bxs-graduation'></i> Cursos</a></li>
+        <li><a href="manuales.html" class="nav-link"><i class='bx bx-book'></i> Manuales</a></li>
+        <li><a href="simulador.html" class="nav-link"><i class='bx bx-desktop'></i> Simulador</a></li>
+        <li><a href="recursos.html" class="nav-link"><i class='bx bx-folder'></i> Recursos</a></li>
+        <li><a href="noticias.html" class="nav-link"><i class='bx bx-news'></i> Noticias</a></li>
+        <li><a href="contacto.html" class="nav-link"><i class='bx bx-envelope'></i> Contacto</a></li>
+        <li><a href="ayuda.html" class="nav-link"><i class='bx bx-help-circle'></i> Ayuda</a></li>
+        <li><a href="login.html" class="nav-link"><i class='bx bx-user'></i> Ingresar</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  
+  <!-- Contenido Principal -->
+  <main class="aula-virtual-main">
+    <!-- Sección Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Bienvenido al Aula Virtual</h1>
+      <p class="hero-subtitle">Tu portal de recursos y formación aeronáutica</p>
+      <a href="cursos.html" class="btn-primary"><i class='bx bx-play-circle'></i> Explorar Cursos</a>
+    </section>
+
+    <!-- Sección: Manuales y Documentación -->
+    <section class="section-manuales">
+      <h2 class="section-title">Manuales y Documentación</h2>
+      <p class="section-description">
+        Accede a la documentación y manuales actualizados para perfeccionar tus conocimientos y habilidades en la aviación.
+      </p>
+      <a href="manuales.html" class="btn-secondary">Ver Manuales <i class='bx bx-right-arrow-alt'></i></a>
+    </section>
+
+    <!-- Sección: Simulador de Vuelo -->
+    <section class="section-simulador">
+      <h2 class="section-title">Simulador de Vuelo</h2>
+      <p class="section-description">
+        Experimenta un entorno virtual interactivo y seguro para practicar tus maniobras y procedimientos de vuelo.
+      </p>
+      <a href="simulador.html" class="btn-secondary">Iniciar Simulador <i class='bx bx-right-arrow-alt'></i></a>
+    </section>
+
+    <!-- Sección: Recursos Adicionales -->
+    <section class="section-recursos">
+      <h2 class="section-title">Recursos Adicionales</h2>
+      <p class="section-description">
+        Descubre una amplia gama de artículos, tutoriales y videos que complementan tu formación aeronáutica.
+      </p>
+      <a href="recursos.html" class="btn-secondary">Ver Recursos <i class='bx bx-right-arrow-alt'></i></a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer reveal">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Acerca de Nosotros</h3>
+            <p>Somos un aeroclub dedicado a la aviación recreativa, con el objetivo de promover la aviación general y ofrecer formación de alta calidad.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./novedades.html">Novedades</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li><a href="mailto:contacto@aeroclub.com">aeroclublagoargentino@cotecal.com.ar</a></li>
+                <li><a href="tel:+123456789">02902 40-3944</a></li>
+                <li>Aeropuerto Internacional Armando Tola, El Calafate, Argentina</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©2025 ©DancoWeb - Todos los derechos reservados</p>
+        <p>Desarrollado por <a href="https://dancoweb.vercel.app/">©DancoWeb - Daniel Matías Fernández</a></p>
+    </div>
+</footer>
+
+
+<script>
+    // Ejemplo de script para el menú móvil
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
