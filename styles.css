@@ -375,7 +375,7 @@ header {
 
 /* Variables globales para fácil mantenimiento */
 :root {
-    --carousel-bg: linear-gradient(260deg, #e0f7fae5, #b3e5fc, #81d4faa7, #4fc2f76a); /* Gradiente inspirado en el Glaciar Perito Moreno */
+    --carousel-bg: linear-gradient(260deg, #e0f7fae5, #b3e5fc, #81d4faa7, #4fc2f76a);
     --border-radius: 10px;
     --transition-duration: 0.5s;
 }
@@ -383,12 +383,12 @@ header {
 /* Contenedor principal del carrusel */
 .carousel-container {
     width: 100%;
-    height: 600px; /* Altura para imágenes horizontales */
+    height: 600px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     border-radius: var(--border-radius);
-    background: var(--carousel-bg); /* Fondo con gradiente de glaciar */
+    background: var(--carousel-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding-top: 2rem;
 }
@@ -396,25 +396,24 @@ header {
 /* Carrusel (contenedor interno de las imágenes) */
 .carousel {
     display: flex;
-    /* Animación para desplazamiento de ida y vuelta */
     animation: scrollCarousel 20s linear infinite;
 }
 
 /* Cada item del carrusel */
 .carousel-item {
-    flex: 0 0 calc(100% / 3); /* Se muestran 3 imágenes por pantalla en vista de escritorio */
+    flex: 0 0 calc(100% / 3);
     height: 100%;
     position: relative;
     overflow: hidden;
-    padding: 0.5rem; /* Pequeño espacio entre imágenes */
+    padding: 0.5rem;
 }
 
 /* Estilo de las imágenes (ajustadas para ser del mismo tamaño sin distorsión) */
 .carousel-item img {
     width: 100%;
-    height: 100%; /* Asegura que todas las imágenes tengan la misma altura que el contenedor */
-    object-fit: contain; /* Muestra la imagen completa sin recorte, ideal para horizontales */
-    object-position: center; /* Centrado de la imagen */
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
     border-radius: var(--border-radius);
     transition: transform var(--transition-duration) ease, filter var(--transition-duration) ease;
 }
@@ -443,57 +442,70 @@ header {
 /* Pantallas medianas: ajuste de altura */
 @media (max-width: 1024px) {
     .carousel-container {
-      height: 500px;
+        height: 500px;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 100%; /* Mantener altura consistente */
+        object-fit: cover; /* Cambiar a cover para que las imágenes se ajusten bien */
     }
 }
 
 /* Pantallas pequeñas: se muestran 2 imágenes a la vez */
 @media (max-width: 768px) {
     .carousel-container {
-      height: 400px;
+        height: 400px;
     }
     .carousel-item {
-      flex: 0 0 calc(100% / 2);
+        flex: 0 0 calc(100% / 2);
     }
-    /* Redefinición de la animación para 2 imágenes visibles con movimiento de ida y vuelta */
+    .carousel-item img {
+        width: 100%;
+        height: 100%; /* Mantener altura consistente */
+        object-fit: cover; /* Ajustar imágenes al contenedor */
+    }
     .carousel {
-      animation: scrollCarousel2 20s linear infinite;
+        animation: scrollCarousel2 20s linear infinite;
     }
     @keyframes scrollCarousel2 {
-      0% {
-        transform: perspective(1000px) translateX(0) rotateY(10deg);
-      }
-      50% {
-        transform: perspective(1000px) translateX(-50%) rotateY(10deg);
-      }
-      100% {
-        transform: perspective(1000px) translateX(0) rotateY(10deg);
-      }
+        0% {
+            transform: perspective(1000px) translateX(0) rotateY(10deg);
+        }
+        50% {
+            transform: perspective(1000px) translateX(-50%) rotateY(10deg);
+        }
+        100% {
+            transform: perspective(1000px) translateX(0) rotateY(10deg);
+        }
     }
 }
 
 /* Pantallas extra pequeñas: se muestra 1 imagen a la vez */
 @media (max-width: 480px) {
     .carousel-container {
-      height: 300px;
+        height: 300px;
     }
     .carousel-item {
-      flex: 0 0 100%;
+        flex: 0 0 100%;
     }
-    /* Animación para 1 imagen visible con movimiento de ida y vuelta */
+    .carousel-item img {
+        width: 100%;
+        height: 100%; /* Mantener altura consistente */
+        object-fit: cover; /* Ajustar imágenes al contenedor */
+    }
     .carousel {
-      animation: scrollCarousel3 20s linear infinite;
+        animation: scrollCarousel3 20s linear infinite;
     }
     @keyframes scrollCarousel3 {
-      0% {
-        transform: perspective(1000px) translateX(0) rotateY(10deg);
-      }
-      50% {
-        transform: perspective(1000px) translateX(-100%) rotateY(10deg);
-      }
-      100% {
-        transform: perspective(1000px) translateX(0) rotateY(10deg);
-      }
+        0% {
+            transform: perspective(1000px) translateX(0) rotateY(10deg);
+        }
+        50% {
+            transform: perspective(1000px) translateX(-100%) rotateY(10deg);
+        }
+        100% {
+            transform: perspective(1000px) translateX(0) rotateY(10deg);
+        }
     }
 }
 
