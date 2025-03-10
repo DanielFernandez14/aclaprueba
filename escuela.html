@@ -4,41 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Info Escuela de Vuelo - ACLA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./estilos nuevos/escuela.css">
+  <link rel="stylesheet" href="nubes.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo-container">
-        <a href="index.html">
-          <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
-        <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
-        <li class="dropdown">
-          <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
-        </li>
-        <li class="dropdown">
-          <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
-        </li>
-        <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+        <div class="logo-container">
+            <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
+            <a href="./index.html"></a>
+            <div class="typewriter-container">
+                <span id="typewriter"></span>
+                <span class="caret"></span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
+            <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
+            <li class="dropdown">
+                <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
+            </li>
+            <li class="dropdown">
+                <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
+            </li>
+            <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
-  </header>
+</header>
 
 
 
-  <main>
-    <h1>Info Escuela de Vuelo</h1>
-    <p>Aquí se muestra información sobre nuestros cursos, inscripciones y más detalles de la escuela.</p>
-  </main>
+  <main class="escuela-vuelo">
+    <h1 class="titulo-principal">Escuela de Vuelo - Aeroclub Lago Argentino</h1>
+    
+    <section class="seccion formacion-pilotos">
+        <h2 class="seccion-titulo">Formación de Pilotos con Estándares Profesionales</h2>
+        <p class="seccion-descripcion">
+            La Escuela de Vuelo del Aeroclub Lago Argentino ofrece una formación integral para quienes desean convertirse en pilotos privados o comerciales. Contamos con instructores altamente capacitados y una flota moderna adaptada a las necesidades de los alumnos.
+        </p>
+    </section>
+    
+    <section class="seccion planes-estudio">
+        <h2 class="seccion-titulo">Planes de Estudio y Modalidades</h2>
+        <p class="seccion-descripcion">
+            Nuestros cursos están diseñados para ofrecer una instrucción de calidad, combinando teoría y práctica. Nos alineamos con los estándares de las principales academias del país, garantizando una educación de primer nivel.
+        </p>
+        <ul class="lista-cursos">
+            <li class="curso">
+                <strong>Curso de Piloto Privado de Avión (PPA):</strong> Formación inicial para quienes buscan volar con fines recreativos o como primer paso en una carrera aeronáutica.
+            </li>
+            <li class="curso">
+                <strong>Curso de Piloto Comercial (PCA):</strong> Capacitación avanzada para quienes desean hacer de la aviación su profesión.
+            </li>
+            <li class="curso">
+                <strong>Habilitaciones y Cursos Adicionales:</strong> Vuelo nocturno, instrumental y otros entrenamientos especializados.
+            </li>
+        </ul>
+    </section>
+    
+    <section class="seccion infraestructura-tecnologia">
+        <h2 class="seccion-titulo">Infraestructura y Tecnología</h2>
+        <p class="seccion-descripcion">
+            Nuestras instalaciones incluyen aulas equipadas con tecnología de vanguardia y simuladores de vuelo que permiten a los estudiantes adquirir experiencia en un entorno seguro antes de volar.
+        </p>
+    </section>
+    
+    <section class="seccion inscripciones-requisitos">
+        <h2 class="seccion-titulo">Inscripciones y Requisitos</h2>
+        <p class="seccion-descripcion">
+            La inscripción está abierta durante todo el año, y los requisitos varían según el curso elegido. Los aspirantes deben cumplir con evaluaciones médicas y superar pruebas de conocimientos básicos para garantizar su seguridad y desempeño en el aire.
+        </p>
+    </section>
+    
+    <section class="seccion vinculacion-instituciones">
+        <h2 class="seccion-titulo">Vinculación con Otras Instituciones</h2>
+        <p class="seccion-descripcion">
+            Colaboramos con otras escuelas de vuelo reconocidas en el país, permitiendo la homologación de licencias y la continuidad en la formación de nuestros alumnos en niveles superiores.
+        </p>
+    </section>
+    
+    <section class="seccion contacto">
+        <h2 class="seccion-titulo">Contacto</h2>
+        
+        <p class="seccion-descripcion">
+            Para más información, comunícate con nosotros a través de nuestro formulario de contacto o visítanos en nuestra sede.
+        </p>
+    </section>
+</main>
+
 
 
   <footer class="footer">
@@ -73,6 +132,6 @@
 
 
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

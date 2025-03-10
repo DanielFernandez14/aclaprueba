@@ -4,42 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - ACLA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./estilos nuevos/contacto.css">
+  <link rel="stylesheet" href="nubes.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo-container">
-        <a href="index.html">
-          <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
-        <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
-        <li class="dropdown">
-          <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
-        </li>
-        <li class="dropdown">
-          <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
-        </li>
-        <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+        <div class="logo-container">
+            <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
+            <div class="typewriter-container">
+                <span id="typewriter"></span>
+                <span class="caret"></span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
+            <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
+            <li class="dropdown">
+                <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
+            </li>
+            <li class="dropdown">
+                <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
+            </li>
+            <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
-  </header>
+</header>
 
+<br><br><br><br><br><br>
 
+<main>
+  <h1>Contacto</h1>
+  <p>Ponte en contacto con nosotros a través de este formulario o por nuestros medios.</p>
+  <form class="contact-form">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Tu email" required>
+    </div>
+    <div class="form-group">
+      <label for="subject">Asunto</label>
+      <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">
+      Enviar <span class="plane-icon"><i class="bx bx-airplane"></i></span>
+    </button>
+  </form>
 
-  <main>
-    <h1>Contacto</h1>
-    <p>Ponte en contacto con nosotros a través de este formulario o por nuestros medios.</p>
-    <!-- Puedes agregar un formulario de contacto aquí -->
-  </main>
+  <!-- SECCIÓN DE REDES SOCIALES -->
+  <section class="social-media">
+    <h2>Redes Sociales</h2>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" title="Facebook">
+        <i class="bx bxl-facebook"></i>
+      </a>
+      <a href="https://x.com/AeroclubLagoArg" target="_blank" title="Twitter">
+        <i class="bx bxl-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/aeroclub_lago_argentino/" target="_blank" title="Instagram">
+        <i class="bx bxl-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/watch?v=eDywXU0TJb4" target="_blank" title="YouTube">
+        <i class="bx bxl-youtube"></i>
+      </a>
+    </div>
+  </section>
+</main>
 
 
   <footer class="footer">
@@ -60,8 +103,8 @@
         <div class="footer-section">
             <h3>Contacto</h3>
             <ul>
-                <li><a href="mailto:contacto@aeroclub.com">contacto@aeroclub.com</a></li>
-                <li><a href="tel:+123456789">2966-282828</a></li>
+                <li><a href="aeroclublagoargentino@cotecal.com.ar">aeroclublagoargentino@cotecal.com.ar</a></li>
+                <li><a href="tel:+123456789">2966-417368</a></li>
                 <li>Aeropuerto El Calafate</li>
             </ul>
         </div>
@@ -71,6 +114,6 @@
         <p>Desarrollado por <a href="#">Daniel Matías Fernández</a></p>
     </div>
 </footer>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

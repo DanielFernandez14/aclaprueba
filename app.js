@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Menú hamburguesa (si lo necesitas en el futuro)
     const menuToggle = document.getElementById('mobile-menu');
@@ -47,4 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Iniciar el efecto
     typeWriter();
+
+    // Intersection Observer para las secciones con clase reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => observer.observe(reveal));
 });

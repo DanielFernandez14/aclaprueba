@@ -1,0 +1,743 @@
+/* Variables raíz */
+:root {
+    --negro: #000000;
+    --blanco: #FFFFFF;
+    --dorado: #FFD700;
+    --gris: #808080;
+    --celeste: #75AADB;
+    --blanco-bandera: #FFFFFF;
+    --sol-dorado: #FFD700;
+}
+
+/* Reset básico y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #062a49;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    color: #333;
+    
+}
+
+
+
+/* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
+/* Animación de nubes moviéndose detrás */
+/* Fondo con nubes moviéndose */
+/* Fondo de nubes rápidas (antes) */
+
+
+
+
+
+
+
+/* Variables globales para tipografía */
+:root {
+  --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
+--logo-text-size: 1.5rem;
+--logo-text-color: #333;
+  --marquee-duration: 15s; /* Duración de la animación */
+}
+
+
+
+/* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
+@keyframes marquee {
+0% {
+    transform: translateX(100%);
+}
+100% {
+    transform: translateX(-100%);
+}
+}
+
+
+
+/* ================================
+   Variables Globales
+================================ */
+:root {
+    --primary-color: rgba(117, 170, 219, 0.9);
+    --secondary-color: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
+    --accent-color: #ffd700;
+    --celeste: #7ec8e3;
+    --blanco: #fff;
+    --bg-hover: rgba(255, 215, 0, 0.1);
+    --navbar-padding: 1rem;
+    --border-radius: 10px;
+  }
+  
+  /* ================================
+     Header y Navbar
+  ================================ */
+  
+ /* Header fijo con degradado y sombra */
+/* Header fijo con degradado y sombra */
+header {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Contenedor de la Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--navbar-padding) 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+}
+
+/* Contenedor del Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Imagen del Logo */
+.logo-container img {
+    max-height: 90px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en el logo */
+.logo-container img:hover {
+    transform: scale(1.3);
+}
+
+/* Lista de enlaces de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Items de la navegación */
+.nav-links li {
+    position: relative;
+    margin: 0 0.5rem;
+}
+
+/* Enlaces de navegación */
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Hover en enlaces */
+.nav-links a:hover {
+    color: var(--accent-color);
+    background: var(--bg-hover);
+    border-radius: 5px;
+}
+
+/* Espaciado para íconos */
+.nav-links i {
+    margin-right: 0.5rem;
+}
+
+/* ================================
+   Dropdown Menú
+=============================== */
+
+/* Dropdown oculto por defecto */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    animation: slideDown 0.3s ease forwards;
+    z-index: 1000;
+}
+
+/* Muestra el dropdown al hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Items del dropdown */
+.dropdown-menu li {
+    margin: 0;
+}
+
+/* Enlaces dentro del dropdown */
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+    display: block;
+    color: var(--text-color);
+}
+
+/* Hover en el dropdown */
+.dropdown-menu a:hover {
+    background: var(--celeste);
+    color: var(--blanco);
+}
+
+/* Animación para dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   Menú Hamburguesa
+=============================== */
+
+/* Inicialmente oculto en escritorio */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Barras del menú */
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Animaciones al activar el menú */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ================================
+   Responsive para pantallas medianas (hasta 768px)
+=============================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--navbar-padding) 1.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    /* Mostrar menú hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Ocultar enlaces de navegación por defecto */
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Mostrar navegación cuando se activa con efecto profesional */
+    .nav-links.active {
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        display: flex;
+        animation: menuSlideIn 0.5s ease forwards;
+    }
+    
+    /* Centrar cada item en el menú móvil */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    /* Ajuste para dropdown en móvil */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+    }
+}
+
+/* ================================
+   Responsive para pantallas muy pequeñas (hasta 480px)
+=============================== */
+@media (max-width: 480px) {
+    .navbar {
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        padding: var(--navbar-padding) 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo a la izquierda */
+    .logo-container {
+        order: 1;
+    }
+    
+    .logo-container img {
+        max-height: 70px;
+    }
+    
+    /* Menú hamburguesa a la derecha */
+    .menu-toggle {
+        order: 2;
+        display: flex;
+    }
+    
+    /* Estilado para los enlaces de navegación en móvil */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: menuSlideIn 0.5s ease forwards;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        position: relative;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        background: var(--bg-hover);
+        border-radius: 5px;
+        color: var(--accent-color);
+    }
+    
+    @keyframes menuSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* ================================
+   Animaciones adicionales para menú móvil
+=============================== */
+@keyframes menuSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ========================================================
+   CONTENEDOR PRINCIPAL (MAIN)
+======================================================== */
+main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #1c92d2;
+  }
+  
+  main p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* ========================================================
+     FORMULARIO DE CONTACTO
+  ======================================================== */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1c92d2;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #1c92d2;
+  }
+  
+  /* ========================================================
+     BOTÓN DE ENVÍO CON ANIMACIÓN DE AVIÓN
+  ======================================================== */
+  .btn-submit {
+    position: relative;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #1c92d2, #f2fcfe);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .btn-submit:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Animación del avioncito al hacer click */
+  .btn-submit:active .plane-icon {
+    animation: flyAway 0.6s forwards;
+  }
+  
+  .plane-icon {
+    display: inline-block;
+  }
+  
+  @keyframes flyAway {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(150px); opacity: 0; }
+  }
+  
+  /* ========================================================
+     SECCIÓN DE REDES SOCIALES
+  ======================================================== */
+  .social-media {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .social-media h2 {
+    font-size: 1.8rem;
+    color: #1c92d2;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons a {
+    font-size: 2.5rem;
+    color: #1c92d2;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #f16529;
+    transform: scale(1.1);
+  }
+  
+  /* ========================================================
+     RESPONSIVE DESIGN
+  ======================================================== */
+  @media (max-width: 480px) {
+    main {
+      padding: 15px 20px;
+    }
+    .social-icons a {
+      font-size: 2rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos del footer */
+/* Estilos del footer */
+.footer {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
+    color: #fff; /* Reemplacé var(--blanco) por un valor directo */
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    padding: 1rem;
+}
+
+.footer-section h3 {
+    color: #d4af37; /* Reemplacé var(--dorado) por un valor directo */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d4af37; /* Reemplacé var(--dorado) */
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.75rem 0;
+}
+
+.footer-section ul li a {
+    color: #fff; /* Reemplacé var(--blanco) */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37; /* Reemplacé var(--dorado) */
+    transform: translateX(5px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: #d4af37; /* Reemplacé var(--dorado) */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #00b7eb; /* Reemplacé var(--celeste) por un valor directo */
+    text-decoration: underline;
+}
+
+/* Detalle decorativo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #d4af37; /* Reemplacé var(--dorado) */
+    opacity: 0.7;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-section {
+        text-align: center; /* Centra cada sección */
+    }
+
+    .footer-section h3::after {
+        left: 50%; /* Centra la línea decorativa */
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a {
+        justify-content: center; /* Centra los enlaces */
+    }
+
+    .footer-section ul li a:hover {
+        transform: none; /* Elimina el desplazamiento en hover */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem 1rem; /* Reduce el padding para que no sea tan grande */
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem; /* Reduce el tamaño del título */
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem; /* Reduce el tamaño del texto en footer-bottom */
+    }
+}
+
+/* Animaciones */
+.footer-section {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px); /* Animación más sutil */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

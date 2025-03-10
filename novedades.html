@@ -4,41 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novedades - ACLA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./estilos nuevos/novedades.css">
+  <link rel="stylesheet" href="nubes.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo-container">
-        <a href="index.html">
-          <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
-        <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
-        <li class="dropdown">
-          <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
-        </li>
-        <li class="dropdown">
-          <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
-        </li>
-        <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+        <div class="logo-container">
+            <img src="./img/LogoReal.png" alt="ACLA" class="logo-image">
+            <a href="home"></a>
+            <div class="typewriter-container">
+                <span id="typewriter"></span>
+                <span class="caret"></span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li id="home"><a href="index.html"><i class='bx bx-home bx-flashing'></i>Home</a></li>
+            <li><a href="nosotros.html"><i class='bx bxs-plane bx-flashing'></i>Nosotros</a></li>
+            <li class="dropdown">
+                <a href="escuela.html"><i class='bx bxs-plane-alt bx-tada'></i>Info Escuela de Vuelo</a>
+            </li>
+            <li class="dropdown">
+                <a href="novedades.html"><i class='bx bx-news bx-flashing'></i>Novedades</a>
+            </li>
+            <li><a href="contacto.html"><i class='bx bx-user bx-flashing'></i>Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
-  </header>
+</header>
 
 
 
-  <main>
-    <h1>Novedades</h1>
-    <p>Mantente informado con las últimas noticias y eventos relacionados con ACLA.</p>
-  </main>
+
+
+<main class="novedades">
+    <h1 class="news-titulo">Novedades</h1>
+    <p class="news-intro">Mantente informado con las últimas noticias y eventos relacionados con ACLA y la aeronáutica argentina.</p>
+
+    <div class="news-container">
+
+        <!-- Sección de novedades de ANAC -->
+        <div class="news-item anac">
+            <h2 class="news-heading">ANAC</h2>
+            <div class="news-detail">
+                <h3 class="news-subheading">Actualización de Normativas</h3>
+                <p class="news-text">
+                    La ANAC ha publicado nuevas normativas para optimizar la seguridad en el transporte aéreo. Estas medidas actualizan los protocolos y procedimientos para garantizar una operación segura y eficiente en el espacio aéreo nacional.
+                </p>
+                <time class="news-time" datetime="2025-03-01">01 de marzo, 2025</time>
+            </div>
+        </div>
+
+        <!-- Sección de novedades de la Junta de Seguridad en el Transporte (JST) -->
+        <div class="news-item jst">
+            <h2 class="news-heading">Junta de Seguridad en el Transporte (JST)</h2>
+            <div class="news-detail">
+                <h3 class="news-subheading">Informe Trimestral de Seguridad</h3>
+                <p class="news-text">
+                    La JST presentó su informe trimestral destacando avances en la implementación de medidas preventivas y el uso de tecnologías para la monitorización de vuelos, reforzando el compromiso con la seguridad en el transporte aéreo.
+                </p>
+                <time class="news-time" datetime="2025-02-28">28 de febrero, 2025</time>
+            </div>
+        </div>
+
+        <!-- Sección de novedades de EANA -->
+        <div class="news-item eana">
+            <h2 class="news-heading">EANA</h2>
+            <div class="news-detail">
+                <h3 class="news-subheading">Modernización de Infraestructuras</h3>
+                <p class="news-text">
+                    EANA ha iniciado un ambicioso plan de modernización de las infraestructuras aeroportuarias, enfocándose en actualizar sistemas de navegación y comunicación para mejorar la eficiencia y la seguridad del tráfico aéreo.
+                </p>
+                <time class="news-time" datetime="2025-02-25">25 de febrero, 2025</time>
+            </div>
+        </div>
+
+        <!-- Sección de novedades del Aeroclub Lago Argentino -->
+        <div class="news-item aeroclub">
+            <h2 class="news-heading">Aeroclub Lago Argentino</h2>
+            <div class="news-detail">
+                <h3 class="news-subheading">Eventos y Actividades</h3>
+                <p class="news-text">
+                    El Aeroclub Lago Argentino anuncia una serie de eventos y actividades, incluyendo jornadas de vuelo, talleres de capacitación y simulacros de emergencia, orientados a promover la cultura aeronáutica y el entrenamiento continuo.
+                </p>
+                <time class="news-time" datetime="2025-02-27">27 de febrero, 2025</time>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+
 
 
 
@@ -74,6 +137,6 @@
 
 
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

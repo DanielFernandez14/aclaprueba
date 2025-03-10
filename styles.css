@@ -2105,3 +2105,14 @@ header {
         }
     }
 }
+/* Estilos para el efecto de aparición al hacer scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
