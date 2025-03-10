@@ -25,43 +25,25 @@ body {
     position: relative;
     overflow-x: hidden;
     color: #333;
-    
 }
-
-
-
-/* background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat-x; */
-/* Animación de nubes moviéndose detrás */
-/* Fondo con nubes moviéndose */
-/* Fondo de nubes rápidas (antes) */
-
-
-
-
-
-
 
 /* Variables globales para tipografía */
 :root {
-  --primary-font: 'Montserrat', sans-serif; /* Puedes cambiar la fuente si lo deseas */
---logo-text-size: 1.5rem;
---logo-text-color: #333;
-  --marquee-duration: 15s; /* Duración de la animación */
+    --primary-font: 'Montserrat', sans-serif;
+    --logo-text-size: 1.5rem;
+    --logo-text-color: #333;
+    --marquee-duration: 15s;
 }
-
-
 
 /* Keyframes para el efecto marquee (movimiento continuo de derecha a izquierda) */
 @keyframes marquee {
-0% {
-    transform: translateX(100%);
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
-100% {
-    transform: translateX(-100%);
-}
-}
-
-
 
 /* ================================
    Variables Globales
@@ -76,13 +58,12 @@ body {
     --bg-hover: rgba(255, 215, 0, 0.1);
     --navbar-padding: 1rem;
     --border-radius: 10px;
-  }
-  
-  /* ================================
-     Header y Navbar
-  ================================ */
-  
- /* Header fijo con degradado y sombra */
+}
+
+/* ================================
+   Header y Navbar
+================================ */
+
 /* Header fijo con degradado y sombra */
 header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -249,11 +230,333 @@ header {
 }
 
 /* ================================
-   Responsive para pantallas medianas (hasta 768px)
+   Estilos para el main de Novedades
+================================ */
+.novedades {
+    position: relative;
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(6,42,73,0.9), rgba(9,64,108,0.9));
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Fondo decorativo sutil con imagen de silueta aeronáutica */
+.novedades::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('aircraft-silhouette.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    transform: rotate(20deg);
+}
+
+/* Título principal */
+.news-titulo {
+    font-family: var(--primary-font);
+    font-size: 3rem;
+    text-align: center;
+    color: var(--dorado);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeInDown 1s ease-out both;
+}
+
+/* Animación para el título */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Línea decorativa que se expande al hover */
+.news-titulo::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 4px;
+    background: var(--dorado);
+    transition: width 0.5s ease-in-out;
+    margin: 10px auto;
+}
+
+.news-titulo:hover::after {
+    width: 50%;
+}
+
+/* Intro o descripción principal */
+.news-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--blanco);
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out both;
+}
+
+/* Animación para la introducción */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor de las noticias con grid responsivo */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Cada item de noticia */
+.news-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado de cada noticia */
+.news-heading {
+    font-family: var(--primary-font);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.news-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Detalle de cada noticia */
+.news-detail {
+    padding: 10px 0;
+}
+
+/* Subtítulo interno */
+.news-subheading {
+    font-size: 1.4rem;
+    color: var(--celeste);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.news-item:hover .news-subheading {
+    color: var(--accent-color);
+}
+
+/* Texto de la noticia */
+.news-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* Fecha de la noticia */
+.news-time {
+    font-size: 0.9rem;
+    color: var(--gris);
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.news-item:hover .news-time {
+    color: var(--accent-color);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 480px) {
+    .novedades {
+        padding: 20px; /* Reducir padding en móviles */
+        margin: 80px auto; /* Ajustar margen superior */
+    }
+
+    .news-titulo {
+        font-size: 2rem; /* Reducir tamaño del título */
+    }
+
+    .news-intro {
+        font-size: 0.9rem; /* Reducir tamaño de la intro */
+    }
+
+    /* Ajustar el grid para mobile */
+    .news-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Hacer que las cards ocupen todo el ancho */
+        gap: 20px; /* Reducir el gap entre cards */
+    }
+
+    .news-item {
+        padding: 15px; /* Reducir padding de los items */
+    }
+
+    .news-heading {
+        font-size: 1.5rem; /* Reducir tamaño del encabezado */
+    }
+
+    .news-subheading {
+        font-size: 1.2rem; /* Reducir tamaño del subtítulo */
+    }
+
+    .news-text {
+        font-size: 0.9rem; /* Reducir tamaño del texto */
+    }
+
+    .news-time {
+        font-size: 0.8rem; /* Reducir tamaño de la fecha */
+    }
+}
+
+/* Estilos del footer */
+.footer {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
+    color: #fff;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    padding: 1rem;
+}
+
+.footer-section h3 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d4af37;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.75rem 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37;
+    transform: translateX(5px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #00b7eb;
+    text-decoration: underline;
+}
+
+/* Detalle decorativo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #d4af37;
+    opacity: 0.7;
+}
+
+/* ================================
+   Media Queries para responsive
 =============================== */
+
+/* Pantallas medianas (tablets, hasta 768px) */
 @media (max-width: 768px) {
     .navbar {
-        padding: var(--navbar-padding) 1.5rem;
+        padding: 0.5rem 1.5rem; /* Reducir padding para tablets */
         flex-wrap: wrap;
         justify-content: space-between;
     }
@@ -275,7 +578,7 @@ header {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
     
-    /* Mostrar navegación cuando se activa con efecto profesional */
+    /* Mostrar navegación cuando se activa */
     .nav-links.active {
         background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         display: flex;
@@ -295,93 +598,109 @@ header {
         box-shadow: none;
         padding-left: 1rem;
     }
+
+    /* Ajustes para la sección de novedades */
+    .novedades {
+        padding: 30px; /* Reducir padding en tablets */
+        margin: 100px auto; /* Ajustar margen superior */
+    }
+
+    .news-titulo {
+        font-size: 2.5rem; /* Reducir tamaño del título */
+    }
+
+    .news-intro {
+        font-size: 1rem; /* Reducir tamaño de la intro */
+    }
+
+    /* Footer en una sola columna */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a {
+        justify-content: center;
+    }
+
+    .footer-section ul li a:hover {
+        transform: none;
+    }
 }
 
-/* ================================
-   Responsive para pantallas muy pequeñas (hasta 480px)
-=============================== */
+/* Pantallas pequeñas (móviles, hasta 480px) */
 @media (max-width: 480px) {
     .navbar {
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        padding: var(--navbar-padding) 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    /* Logo a la izquierda */
-    .logo-container {
-        order: 1;
+        padding: 0.5rem 1rem; /* Reducir padding para móviles */
     }
     
     .logo-container img {
-        max-height: 70px;
-    }
-    
-    /* Menú hamburguesa a la derecha */
-    .menu-toggle {
-        order: 2;
-        display: flex;
-    }
-    
-    /* Estilado para los enlaces de navegación en móvil */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        z-index: 1000;
-    }
-    
-    .nav-links.active {
-        display: flex;
-        animation: menuSlideIn 0.5s ease forwards;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
+        max-height: 70px; /* Reducir tamaño del logo */
     }
     
     .nav-links a {
-        display: block;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        color: var(--text-color);
-        position: relative;
-        transition: background 0.3s ease, color 0.3s ease;
+        font-size: 0.9rem; /* Ajustar tamaño de fuente de los enlaces */
     }
-    
-    .nav-links a:hover {
-        background: var(--bg-hover);
-        border-radius: 5px;
-        color: var(--accent-color);
+
+    /* Ajustes para la sección de novedades */
+    .novedades {
+        padding: 20px; /* Reducir padding en móviles */
+        margin: 80px auto; /* Ajustar margen superior */
     }
-    
-    @keyframes menuSlideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+
+    .news-titulo {
+        font-size: 2rem; /* Reducir tamaño del título */
+    }
+
+    .news-intro {
+        font-size: 0.9rem; /* Reducir tamaño de la intro */
+    }
+
+    .news-item {
+        padding: 15px; /* Reducir padding de los items */
+    }
+
+    .news-heading {
+        font-size: 1.5rem; /* Reducir tamaño del encabezado */
+    }
+
+    .news-subheading {
+        font-size: 1.2rem; /* Reducir tamaño del subtítulo */
+    }
+
+    .news-text {
+        font-size: 0.9rem; /* Reducir tamaño del texto */
+    }
+
+    .news-time {
+        font-size: 0.8rem; /* Reducir tamaño de la fecha */
+    }
+
+    /* Ajustes para el footer */
+    .footer {
+        padding: 2rem 1rem 1rem; /* Reducir padding */
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem; /* Reducir tamaño del título */
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem; /* Reducir tamaño del texto */
     }
 }
 
-
-/* ================================
-   Animaciones adicionales para menú móvil
-=============================== */
+/* Animaciones adicionales para menú móvil */
 @keyframes menuSlideIn {
     from {
         opacity: 0;
@@ -390,366 +709,6 @@ header {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-
-
-/* ================================
-   Estilos para el main de Novedades
-================================ */
-.novedades {
-    position: relative;
-    max-width: 1200px;
-    margin: 120px auto;
-    padding: 40px;
-    background: linear-gradient(135deg, rgba(6,42,73,0.9), rgba(9,64,108,0.9));
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-  }
-  
-  /* Fondo decorativo sutil con imagen de silueta aeronáutica */
-  .novedades::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: url('aircraft-silhouette.png'); /* Imagen temática relacionada con la aviación */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.05;
-    transform: rotate(20deg);
-  }
-  
-  /* Título principal */
-  .news-titulo {
-    font-family: var(--primary-font);
-    font-size: 3rem;
-    text-align: center;
-    color: var(--dorado);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    position: relative;
-    animation: fadeInDown 1s ease-out both;
-  }
-  
-  /* Animación para el título */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Línea decorativa que se expande al hover */
-  .news-titulo::after {
-    content: "";
-    display: block;
-    width: 0%;
-    height: 4px;
-    background: var(--dorado);
-    transition: width 0.5s ease-in-out;
-    margin: 10px auto;
-  }
-  
-  .news-titulo:hover::after {
-    width: 50%;
-  }
-  
-  /* Intro o descripción principal */
-  .news-intro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--blanco);
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out both;
-  }
-  
-  /* Animación para la introducción */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Contenedor de las noticias con grid responsivo */
-  .news-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
-  
-  /* Cada item de noticia */
-  .news-item {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Encabezado de cada noticia */
-  .news-heading {
-    font-family: var(--primary-font);
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    position: relative;
-    padding-bottom: 10px;
-  }
-  
-  .news-heading::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--accent-color);
-  }
-  
-  /* Detalle de cada noticia */
-  .news-detail {
-    padding: 10px 0;
-  }
-  
-  /* Subtítulo interno */
-  .news-subheading {
-    font-size: 1.4rem;
-    color: var(--celeste);
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .news-item:hover .news-subheading {
-    color: var(--accent-color);
-  }
-  
-  /* Texto de la noticia */
-  .news-text {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text-color);
-    margin-bottom: 15px;
-  }
-  
-  /* Fecha de la noticia */
-  .news-time {
-    font-size: 0.9rem;
-    color: var(--gris);
-    display: block;
-    text-align: right;
-    margin-top: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .news-item:hover .news-time {
-    color: var(--accent-color);
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos del footer */
-/* Estilos del footer */
-.footer {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(128, 128, 128, 0.9) 50%);
-    color: #fff; /* Reemplacé var(--blanco) por un valor directo */
-    padding: 4rem 2rem 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-section {
-    padding: 1rem;
-}
-
-.footer-section h3 {
-    color: #d4af37; /* Reemplacé var(--dorado) por un valor directo */
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: #d4af37; /* Reemplacé var(--dorado) */
-}
-
-.footer-section p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin: 0.75rem 0;
-}
-
-.footer-section ul li a {
-    color: #fff; /* Reemplacé var(--blanco) */
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.footer-section ul li a:hover {
-    color: #d4af37; /* Reemplacé var(--dorado) */
-    transform: translateX(5px);
-}
-
-/* Footer bottom */
-.footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.footer-bottom p {
-    margin: 0.5rem 0;
-    opacity: 0.8;
-}
-
-.footer-bottom a {
-    color: #d4af37; /* Reemplacé var(--dorado) */
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    color: #00b7eb; /* Reemplacé var(--celeste) por un valor directo */
-    text-decoration: underline;
-}
-
-/* Detalle decorativo */
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: #d4af37; /* Reemplacé var(--dorado) */
-    opacity: 0.7;
-}
-
-/* Media Queries para responsive */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-        text-align: center; /* Centra el texto */
-    }
-
-    .footer-section {
-        text-align: center; /* Centra cada sección */
-    }
-
-    .footer-section h3::after {
-        left: 50%; /* Centra la línea decorativa */
-        transform: translateX(-50%);
-    }
-
-    .footer-section ul li a {
-        justify-content: center; /* Centra los enlaces */
-    }
-
-    .footer-section ul li a:hover {
-        transform: none; /* Elimina el desplazamiento en hover */
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 2rem 1rem 1rem; /* Reduce el padding para que no sea tan grande */
-    }
-
-    .footer-section h3 {
-        font-size: 1.3rem; /* Reduce el tamaño del título */
-    }
-
-    .footer-section p,
-    .footer-section ul li a {
-        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem; /* Reduce el tamaño del texto en footer-bottom */
     }
 }
 
@@ -773,7 +732,7 @@ header {
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(10px); /* Animación más sutil */
+            transform: translateY(10px);
         }
         to {
             opacity: 1;
